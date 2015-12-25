@@ -1,0 +1,1908 @@
+{
+  "id" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+  "revisionNumber" : 1,
+  "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+  "releaseVersion" : "1.0.0",
+  "resources" : [ {
+    "id" : "67d6e891-dc79-4a42-be7d-b0b87bf5d8eb",
+    "name" : "/{id}/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "3087f1a5-605a-42e8-9d27-55b3b6cb8702",
+      "name" : "/{id}/_history-get",
+      "displayName" : "MedicationAdministration History",
+      "description" : "<p>It retrieves the history of a particular MedicationAdministration identified by the given id in path.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795998733,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}/_history",
+      "resourceId" : "67d6e891-dc79-4a42-be7d-b0b87bf5d8eb",
+      "resourceName" : "/{id}/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556590,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "4e65858d-9e2c-4b58-b51e-aac013f5e307",
+    "name" : "/{id}/{type}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}/{type}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "ff2dd602-fe98-4529-b044-8550d82d57ef",
+      "name" : "/{id}/{type}-get",
+      "displayName" : "Compartment Search",
+      "description" : "<p>Search the specified resource type in MedicationAdministration compartment.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Type of Resource",
+        "name" : "type",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication code. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this administration device identity (Device).",
+        "name" : "device",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations that share this encounter (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this external identity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication (Medication).",
+        "name" : "medication",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Administrations that were not made. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "notgiven",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a patient to list administrations for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who administered substance (Practitioner)?",
+        "name" : "practitioner",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a prescription to list administrations from (MedicationPrescription).",
+        "name" : "prescription",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "MedicationAdministration event status (for example one of active/paused/completed/nullified). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443796000429,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}/{type}",
+      "resourceId" : "4e65858d-9e2c-4b58-b51e-aac013f5e307",
+      "resourceName" : "/{id}/{type}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/{type}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556590,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "b3d8f720-11f8-4e38-b22b-bf297dea648f",
+    "name" : "/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "735390fd-e726-486b-a676-36da3dfa8f11",
+      "name" : "/_history-get",
+      "displayName" : "MedicationAdministrations History",
+      "description" : "<p>It retrieves the history of all resources of MedicationAdministration</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443796000950,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/_history",
+      "resourceId" : "b3d8f720-11f8-4e38-b22b-bf297dea648f",
+      "resourceName" : "/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556589,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "270555da-77ad-426d-bddb-9605a0462b87",
+    "name" : "/{id}/_history/{vid}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}/_history/{vid}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "89fe837f-d2ce-4df8-ae00-13dfcae08f9f",
+      "name" : "/{id}/_history/{vid}/$meta-get",
+      "displayName" : "MedicationAdministration Version based Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given version of the MedicationAdministration.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of MedicationAdministration.",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795994370,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}/$meta",
+      "resourceId" : "270555da-77ad-426d-bddb-9605a0462b87",
+      "resourceName" : "/{id}/_history/{vid}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556590,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "14a55e96-ebf9-4857-9dcd-b3daa3f54a90",
+    "name" : "/{id}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "78a26e8a-cc00-40d2-b80e-318038aa5939",
+      "name" : "/{id}/$meta-get",
+      "displayName" : "MedicationAdministration Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given MedicationAdministration.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795995880,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}/$meta",
+      "resourceId" : "14a55e96-ebf9-4857-9dcd-b3daa3f54a90",
+      "resourceName" : "/{id}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556590,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "8a73079d-820b-4c32-bd6a-636cbc32c523",
+    "name" : "/{id}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "dfe474b8-4fd9-4592-a073-467abcfe94a3",
+      "name" : "/{id}-get",
+      "displayName" : "Read MedicationAdministration ",
+      "description" : "<p>Returns details of MedicationAdministration having id given in path</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795996806,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}",
+      "resourceId" : "8a73079d-820b-4c32-bd6a-636cbc32c523",
+      "resourceName" : "/{id}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556589,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "233adacb-ec57-4b33-b281-48cdf22e859d",
+    "name" : "/_search",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/_search",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "ac8a3648-7d4b-483c-9f4b-5e71a1b5e205",
+      "name" : "/_search-post",
+      "displayName" : "MedicationAdministrations Search",
+      "description" : "<p>This interaction searches a set of MedicationAdministrations based on some filter criteria. Search interactions take a series of parameters of name'='value pairs encoded as an application/x-www-form-urlencoded submission for a POST.</p>\n",
+      "verb" : "POST",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "defaultValue" : "application/x-www-form-urlencoded",
+        "description" : "Specifies the format of data in body",
+        "name" : "Content-Type",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication code. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this administration device identity (Device).",
+        "name" : "device",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations that share this encounter (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this external identity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication (Medication).",
+        "name" : "medication",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Administrations that were not made. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "notgiven",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a patient to list administrations for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who administered substance (Practitioner)?",
+        "name" : "practitioner",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a prescription to list administrations from (MedicationPrescription).",
+        "name" : "prescription",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "MedicationAdministration event status (for example one of active/paused/completed/nullified). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+          "name" : "_id",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+          "name" : "_elements",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_profile",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_tag",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_security",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "integer",
+          "description" : "The number of resources that should be returned in a single page.",
+          "name" : "_count",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "boolean",
+          "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+          "name" : "_summary",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_include",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_revinclude",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:asc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:desc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Return administrations of this medication code. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "code",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Return administrations with this administration device identity (Device).",
+          "name" : "device",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "effectivetime",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "effectivetime",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Return administrations that share this encounter (Encounter).",
+          "name" : "encounter",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Return administrations with this external identity. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "identifier",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Return administrations of this medication (Medication).",
+          "name" : "medication",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Administrations that were not made. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "notgiven",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The identity of a patient to list administrations for (Patient).",
+          "name" : "patient",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who administered substance (Practitioner)?",
+          "name" : "practitioner",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The identity of a prescription to list administrations from (MedicationPrescription).",
+          "name" : "prescription",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "MedicationAdministration event status (for example one of active/paused/completed/nullified). Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "status",
+          "required" : false,
+          "type" : "body"
+        } ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795998078,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "233adacb-ec57-4b33-b281-48cdf22e859d",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    }, {
+      "id" : "ef155bdd-0ead-4c78-b295-95d1dc9dfb07",
+      "name" : "/_search-get",
+      "displayName" : "MedicationAdministrations Search",
+      "description" : "<p>Search MedicationAdministrations based on some filter criteria.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication code. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this administration device identity (Device).",
+        "name" : "device",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations that share this encounter (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this external identity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication (Medication).",
+        "name" : "medication",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Administrations that were not made. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "notgiven",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a patient to list administrations for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who administered substance (Practitioner)?",
+        "name" : "practitioner",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a prescription to list administrations from (MedicationPrescription).",
+        "name" : "prescription",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "MedicationAdministration event status (for example one of active/paused/completed/nullified). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443796073339,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "233adacb-ec57-4b33-b281-48cdf22e859d",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_search",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556589,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "465de88d-4360-45be-82b8-c0d0520b73aa",
+    "name" : "",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "69fcd25a-37ac-4688-abdf-d193c14141e5",
+      "name" : "-get",
+      "displayName" : "Read MedicationAdministrations",
+      "description" : "<p>Returns MedicationAdministrations based on filter criteria OR Provides provision for pagination (stateid, page, page_size &amp; _pretty are query parameters used for Paging).</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select MedicationAdministrations based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select MedicationAdministration based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the MedicationAdministration. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the MedicationAdministration. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the MedicationAdministration. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of MedicationAdministrations that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular MedicationAdministration, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes i.e. MedicationAdministration 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular MedicationAdministration, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication code. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this administration device identity (Device).",
+        "name" : "device",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date administration happened (or did not happen). The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "effectivetime",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations that share this encounter (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations with this external identity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Return administrations of this medication (Medication).",
+        "name" : "medication",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Administrations that were not made. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "notgiven",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a patient to list administrations for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who administered substance (Practitioner)?",
+        "name" : "practitioner",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The identity of a prescription to list administrations from (MedicationPrescription).",
+        "name" : "prescription",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "MedicationAdministration event status (for example one of active/paused/completed/nullified). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Unique id associated with a page.",
+        "name" : "stateid",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "MedicationAdministration resource offset.",
+        "name" : "page",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "The number of MedicationAdministration resources requested in a page.",
+        "name" : "page_size",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "Set true to get prettified data.",
+        "name" : "_pretty",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556593,
+      "modifiedTime" : 1443795991621,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "",
+      "resourceId" : "465de88d-4360-45be-82b8-c0d0520b73aa",
+      "resourceName" : "",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556589,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "b3632624-5dbf-4e96-afe7-83dc7a7fa2dc",
+    "name" : "/{id}/_history/{vid}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/{id}/_history/{vid}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "2cb8ccd8-96e5-4bc5-8441-157d724b88f1",
+      "name" : "/{id}/_history/{vid}-get",
+      "displayName" : "MedicationAdministration Version Read",
+      "description" : "<p>This interaction preforms a version specific read of MedicationAdministration resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the MedicationAdministration. Sample ids are: 5083, 8209, 8219, 8280, 8327.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of MedicationAdministration",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556594,
+      "modifiedTime" : 1443795992022,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}",
+      "resourceId" : "b3632624-5dbf-4e96-afe7-83dc7a7fa2dc",
+      "resourceName" : "/{id}/_history/{vid}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556590,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "ee1c3fc5-41e5-448a-8809-0243abef4282",
+    "name" : "/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+    "path" : "/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "58aa076f-0244-4cb7-b938-a43034d4357e",
+      "name" : "/$meta-get",
+      "displayName" : "MedicationAdministrations Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for MedicationAdministration.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443788556593,
+      "modifiedTime" : 1443795993417,
+      "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/MedicationAdministration",
+      "methods" : [ ],
+      "path" : "/$meta",
+      "resourceId" : "ee1c3fc5-41e5-448a-8809-0243abef4282",
+      "resourceName" : "/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443788556589,
+    "apiRevisionId" : "388b8b25-50b8-4819-b4cb-ce4d694514b0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  } ],
+  "customAttributes" : {
+    "SWAGGER_INFO" : "{\n  \"description\" : \"FHIR MedicationAdministration resource API documentation\",\n  \"version\" : \"1.0.0\",\n  \"title\" : \"MedicationAdministration API\"\n}",
+    "SWAGGER_VERSION" : "2.0"
+  },
+  "createdTime" : 1443788556557
+}

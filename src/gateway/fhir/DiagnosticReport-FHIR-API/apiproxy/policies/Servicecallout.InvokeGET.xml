@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="true" enabled="true" name="Servicecallout.InvokeGET">
+    <DisplayName>Servicecallout.InvokeGET</DisplayName>
+    <Properties/>
+    <Request clearPayload="false" variable="invokeConnectorAPIRequest">
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+        <Set>     
+          <Headers>      
+              <Header name="Accept">{request.header.Accept}</Header> 
+			  <Header name="patient">{patient_id}</Header> 		
+          </Headers> 
+          <Verb>{request.verb}</Verb>
+		</Set>
+    </Request>
+    <Response>invokeConnectorAPIResponse</Response> 
+    <HTTPTargetConnection>
+        <Properties/>
+      <URL>https://{service_callout_domain}/{service_callout_basepath}{proxy.pathsuffix}?{request.querystring}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

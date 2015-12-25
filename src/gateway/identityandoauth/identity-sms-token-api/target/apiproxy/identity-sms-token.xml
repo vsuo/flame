@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><APIProxy name="identity-sms-token" revision="2">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1396727964361</CreatedAt>
+    <CreatedBy>rkilaparti@apigee.com</CreatedBy>
+    <DisplayName>identity-sms-token</DisplayName>
+    <LastModifiedAt>1396727964361</LastModifiedAt>
+    <LastModifiedBy>rkilaparti@apigee.com</LastModifiedBy>
+    <Description>shilpa_shaha git: 8f438204 BRL03554</Description>
+    <Policies>
+        <Policy>generate-token</Policy>
+        <Policy>get-identifier-token</Policy>
+        <Policy>get-identifier</Policy>
+        <Policy>get-token-cache</Policy>
+        <Policy>modify-token-cache</Policy>
+        <Policy>set-create-response</Policy>
+        <Policy>set-failure-token-response</Policy>
+        <Policy>set-sms-payload</Policy>
+        <Policy>set-success-token-response</Policy>
+        <Policy>set-token-cache</Policy>
+        <Policy>verify-api-key</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://generate-token.js</Resource>
+        <Resource>jsc://token.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+    <validate>true</validate>
+</APIProxy>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="CreateUser.ServiceCallout">
+    <Request clearPayload="false" variable="createUser.request">
+         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>createUser.response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/identity-users/v1/users</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

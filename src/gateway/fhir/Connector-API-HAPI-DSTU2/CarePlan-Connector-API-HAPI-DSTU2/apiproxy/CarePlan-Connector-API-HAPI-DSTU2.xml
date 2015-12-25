@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="CarePlan-Connector-API-HAPI-DSTU2">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1441790276681</CreatedAt>
+    <CreatedBy>surbhi_nijhara@persistent.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>CarePlan-Connector-API-HAPI-DSTU2</DisplayName>
+    <LastModifiedAt>1441797636615</LastModifiedAt>
+    <LastModifiedBy>surbhi_nijhara@persistent.com</LastModifiedBy>
+    <Policies>
+        <Policy>AccessControl</Policy>
+        <Policy>AssignPaginationAttributes</Policy>
+        <Policy>AssignProxyResponse</Policy>
+        <Policy>CheckJSONThreat</Policy>
+        <Policy>CheckXMLThreat</Policy>
+        <Policy>DEBUG</Policy>
+        <Policy>ExtractPrimaryResourceTypeAndId</Policy>
+        <Policy>FHIRConversion</Policy>
+        <Policy>Fault_AccessControl</Policy>
+        <Policy>Fault_GenericFault</Policy>
+        <Policy>Fault_TargetErrors</Policy>
+        <Policy>Fault_UnknownResource</Policy>
+        <Policy>InitialConfiguration</Policy>
+        <Policy>ReplaceTargetLinkURLs</Policy>
+        <Policy>SetAcceptHeaderToXML</Policy>
+        <Policy>SetContentLength</Policy>
+        <Policy>SetContentTypeBundleXML</Policy>
+        <Policy>SetContentTypeResourceXML</Policy>
+        <Policy>SetFHIRConversionOptions</Policy>
+		<Policy>SetPatientId</Policy>
+        <Policy>SetResponseToConvertedDoc</Policy>
+        <Policy>SetReturnType</Policy>
+        <Policy>ValidateTargetResponse</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://ComputeContentLength.js</Resource>
+        <Resource>jsc://ReplaceTargetLinkURLs.js</Resource>
+        <Resource>jsc://ValidateTargetResponse.js</Resource>
+        <Resource>java://FhirJsonXmlConv-0.0.6-SNAPSHOT-jar-with-dependencies.jar</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,2013 @@
+{
+  "id" : "85dbce23-92c8-4041-a633-d827ed446fec",
+  "revisionNumber" : 1,
+  "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+  "releaseVersion" : "1.0.0",
+  "resources" : [ {
+    "id" : "2f9efd4c-93be-475b-82e9-6651ed921f05",
+    "name" : "/_search",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/_search",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "1f2e399a-5375-4fe1-a7ad-6833a1a5c1e2",
+      "name" : "/_search-post",
+      "displayName" : "CarePlans Search",
+      "description" : "<p>This interaction searches a set of CarePlans based on some filter criteria. Search interactions take a series of parameters of name'='value pairs encoded as an application/x-www-form-urlencoded submission for a POST.</p>\n",
+      "verb" : "POST",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "defaultValue" : "application/x-www-form-urlencoded",
+        "description" : "Specifies the format of data in body",
+        "name" : "Content-Type",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a CarePlan. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of CarePlans that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Detail type of activity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "activitycode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. Two dates can be used to specify an interval. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Activity details defined in specific CarePlan (Supply, ReferralRequest, ProcedureRequest, Appointment, CommunicationRequest, MedicationPrescription, Order, VisionPrescription, ProcessRequest, DeviceUseRequest, NutritionOrder, DiagnosticOrder).",
+        "name" : "activityreference",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Health issues this plan addresses (Condition).",
+        "name" : "condition",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Desired outcome of plan (Goal).",
+        "name" : "goal",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who is involved (Organization, Patient, Practitioner, RelatedPerson).",
+        "name" : "participant",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Matches if the practitioner is listed as a performer in any of the simple activities. (For performers of the detailed activities, chain through the activitydetail search parameter)",
+        "name" : "performer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of the type of relationship and the related plan.Value should be in the form: [relationship-type]$[related-plan].",
+        "name" : "related",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "includes | replaces | fulfills. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "relatedcode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Plan relationship exists with",
+        "name" : "relatedplan",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+          "name" : "_id",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to specify set of elements be returned as part of a CarePlan. The _elements parameter consists of a comma separated list of base element names.",
+          "name" : "_elements",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the profile element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_profile",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the tags element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_tag",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the security element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_security",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "integer",
+          "description" : "The number of CarePlans that should be returned in a single page.",
+          "name" : "_count",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "boolean",
+          "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+          "name" : "_summary",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_include",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_revinclude",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:asc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:desc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Detail type of activity. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "activitycode",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "activitydate",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. Two dates can be used to specify an interval. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "activitydate",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Activity details defined in specific CarePlan (Supply, ReferralRequest, ProcedureRequest, Appointment, CommunicationRequest, MedicationPrescription, Order, VisionPrescription, ProcessRequest, DeviceUseRequest, NutritionOrder, DiagnosticOrder).",
+          "name" : "activityreference",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Health issues this plan addresses (Condition).",
+          "name" : "condition",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Desired outcome of plan (Goal).",
+          "name" : "goal",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who is involved (Organization, Patient, Practitioner, RelatedPerson).",
+          "name" : "participant",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who care plan is for (Patient).",
+          "name" : "patient",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Matches if the practitioner is listed as a performer in any of the simple activities. (For performers of the detailed activities, chain through the activitydetail search parameter)",
+          "name" : "performer",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "A combination of the type of relationship and the related plan.Value should be in the form: [relationship-type]$[related-plan].",
+          "name" : "related",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "includes | replaces | fulfills. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "relatedcode",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Plan relationship exists with",
+          "name" : "relatedplan",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who care plan is for",
+          "name" : "subject",
+          "required" : false,
+          "type" : "body"
+        } ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795287947,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "2f9efd4c-93be-475b-82e9-6651ed921f05",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    }, {
+      "id" : "48d86f64-0cf5-4c8f-b9dc-a815489900a7",
+      "name" : "/_search-get",
+      "displayName" : "CarePlans Search",
+      "description" : "<p>Search CarePlans based on some filter criteria.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a CarePlan. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of CarePlans that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any CarePlans that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source CarePlan from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target CarePlan (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any CarePlans that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source CarePlan from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target CarePlan (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Detail type of activity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "activitycode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. Two dates can be used to specify an interval. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Activity details defined in specific CarePlan (Supply, ReferralRequest, ProcedureRequest, Appointment, CommunicationRequest, MedicationPrescription, Order, VisionPrescription, ProcessRequest, DeviceUseRequest, NutritionOrder, DiagnosticOrder).",
+        "name" : "activityreference",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Health issues this plan addresses (Condition).",
+        "name" : "condition",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Desired outcome of plan (Goal).",
+        "name" : "goal",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who is involved (Organization, Patient, Practitioner, RelatedPerson).",
+        "name" : "participant",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Matches if the practitioner is listed as a performer in any of the simple activities. (For performers of the detailed activities, chain through the activitydetail search parameter)",
+        "name" : "performer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of the type of relationship and the related plan.Value should be in the form: [relationship-type]$[related-plan].",
+        "name" : "related",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "includes | replaces | fulfills. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "relatedcode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Plan relationship exists with",
+        "name" : "relatedplan",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795285669,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "2f9efd4c-93be-475b-82e9-6651ed921f05",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_search",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "59569313-72f1-4b2b-b248-3d92d83e61d0",
+    "name" : "/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "71f00cc6-60c8-474c-80eb-a1d7da601713",
+      "name" : "/_history-get",
+      "displayName" : "CarePlans History",
+      "description" : "<p>It retrieves the history of all CarePlans</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795281461,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/_history",
+      "resourceId" : "59569313-72f1-4b2b-b248-3d92d83e61d0",
+      "resourceName" : "/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "641030a0-4aa6-4d26-afd7-a6ea93179add",
+    "name" : "/{id}/_history/{vid}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}/_history/{vid}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "1f551725-3c77-42d8-a56b-8fe13d740a26",
+      "name" : "/{id}/_history/{vid}-get",
+      "displayName" : "CarePlan Version Read",
+      "description" : "<p>This interaction preforms a version specific read of CarePlan resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of CarePlan",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795303098,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}",
+      "resourceId" : "641030a0-4aa6-4d26-afd7-a6ea93179add",
+      "resourceName" : "/{id}/_history/{vid}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453055,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "446431a1-0522-4303-90c4-a3dd29ee5f5f",
+    "name" : "",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "b7332fd4-f7b6-4bb0-aaa0-942dd7e270ea",
+      "name" : "-get",
+      "displayName" : "Read CarePlans",
+      "description" : "<p>Returns CarePlans based on filter criteria OR Provides provision for pagination (stateid, page, page_size &amp; _pretty are query parameters used for Paging).</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a CarePlan. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of CarePlans that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any CarePlans that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source CarePlan from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target CarePlan (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any CarePlans that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source CarePlan from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target CarePlan (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Detail type of activity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "activitycode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. Two dates can be used to specify an interval. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Activity details defined in specific CarePlan (Supply, ReferralRequest, ProcedureRequest, Appointment, CommunicationRequest, MedicationPrescription, Order, VisionPrescription, ProcessRequest, DeviceUseRequest, NutritionOrder, DiagnosticOrder).",
+        "name" : "activityreference",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Health issues this plan addresses (Condition).",
+        "name" : "condition",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Desired outcome of plan (Goal).",
+        "name" : "goal",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who is involved (Organization, Patient, Practitioner, RelatedPerson).",
+        "name" : "participant",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Matches if the practitioner is listed as a performer in any of the simple activities. (For performers of the detailed activities, chain through the activitydetail search parameter)",
+        "name" : "performer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of the type of relationship and the related plan.Value should be in the form: [relationship-type]$[related-plan].",
+        "name" : "related",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "includes | replaces | fulfills. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "relatedcode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Plan relationship exists with",
+        "name" : "relatedplan",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Unique id associated with a page.",
+        "name" : "stateid",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "CarePlan resource offset.",
+        "name" : "page",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "The number of CarePlan resources requested in a page.",
+        "name" : "page_size",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "Set true to get prettified data.",
+        "name" : "_pretty",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453058,
+      "modifiedTime" : 1444208043193,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "",
+      "resourceId" : "446431a1-0522-4303-90c4-a3dd29ee5f5f",
+      "resourceName" : "",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "5d6f5ecf-dc15-459e-ab84-84e875feb9c4",
+    "name" : "/{id}/_history/{vid}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}/_history/{vid}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "61f7fc67-43ad-4260-bb2f-2d7b112edbc3",
+      "name" : "/{id}/_history/{vid}/$meta-get",
+      "displayName" : "CarePlan Version based Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given version of the CarePlan.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of CarePlan",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1444208038424,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}/$meta",
+      "resourceId" : "5d6f5ecf-dc15-459e-ab84-84e875feb9c4",
+      "resourceName" : "/{id}/_history/{vid}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453055,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "8d5cfcbf-759d-4eef-ae44-a1443d760cc9",
+    "name" : "/{id}/{type}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}/{type}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "454372b3-ef3f-48fa-ab46-01f674dbddd4",
+      "name" : "/{id}/{type}-get",
+      "displayName" : "Compartment Search",
+      "description" : "<p>Search the specified resource type in CarePlan compartment.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Type of Resource",
+        "name" : "type",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a CarePlan. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select CarePlans based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the CarePlan. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of CarePlans that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular CarePlan, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Detail type of activity. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "activitycode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specified date occurs within period specified by CarePlan.activity.timingSchedule. Two dates can be used to specify an interval. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "activitydate",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Activity details defined in specific resource (Supply, ReferralRequest, ProcedureRequest, Appointment, CommunicationRequest, MedicationPrescription, Order, VisionPrescription, ProcessRequest, DeviceUseRequest, NutritionOrder, DiagnosticOrder).",
+        "name" : "activityreference",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Health issues this plan addresses (Condition).",
+        "name" : "condition",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Time period plan covers. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Desired outcome of plan (Goal).",
+        "name" : "goal",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who is involved (Organization, Patient, Practitioner, RelatedPerson).",
+        "name" : "participant",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Matches if the practitioner is listed as a performer in any of the simple activities. (For performers of the detailed activities, chain through the activitydetail search parameter)",
+        "name" : "performer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of the type of relationship and the related plan.Value should be in the form: [relationship-type]$[related-plan].",
+        "name" : "related",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "includes | replaces | fulfills. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "relatedcode",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Plan relationship exists with",
+        "name" : "relatedplan",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who care plan is for",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795312482,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}/{type}",
+      "resourceId" : "8d5cfcbf-759d-4eef-ae44-a1443d760cc9",
+      "resourceName" : "/{id}/{type}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/{type}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453055,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "c15d6c5e-733b-41bf-ab27-39d672993e4b",
+    "name" : "/{id}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "b7b8d9da-f45e-4e8b-beb5-6762a46e426c",
+      "name" : "/{id}/$meta-get",
+      "displayName" : "CarePlan Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given CarePlan resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795291755,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}/$meta",
+      "resourceId" : "c15d6c5e-733b-41bf-ab27-39d672993e4b",
+      "resourceName" : "/{id}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "6c71090f-a3b3-4026-add5-2067c54b92d2",
+    "name" : "/{id}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "1cef78dc-150e-41ee-894f-1012dcc0a764",
+      "name" : "/{id}-get",
+      "displayName" : "Read CarePlan",
+      "description" : "<p>Returns details of CarePlan having id given in path</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795294868,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}",
+      "resourceId" : "6c71090f-a3b3-4026-add5-2067c54b92d2",
+      "resourceName" : "/{id}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "5bcf8096-66f3-49c9-b186-5c656e3454c0",
+    "name" : "/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "f61ea492-e4f1-47da-b9a1-5bb82f9c30b9",
+      "name" : "/$meta-get",
+      "displayName" : "CarePlans Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for CarePlan.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795298817,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/$meta",
+      "resourceId" : "5bcf8096-66f3-49c9-b186-5c656e3454c0",
+      "resourceName" : "/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "1ff41311-a39f-4782-9338-ec416907f320",
+    "name" : "/{id}/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+    "path" : "/{id}/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "50876c7f-e3db-4e9d-89fc-467f89cdc30b",
+      "name" : "/{id}/_history-get",
+      "displayName" : "CarePlan History",
+      "description" : "<p>It retrieves the history of a particular CarePlan identified by the given id in path.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the CarePlan. Sample ids are: 14840, 2437, 4985, 2434, 2435.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785453059,
+      "modifiedTime" : 1443795301469,
+      "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/CarePlan",
+      "methods" : [ ],
+      "path" : "/{id}/_history",
+      "resourceId" : "1ff41311-a39f-4782-9338-ec416907f320",
+      "resourceName" : "/{id}/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785453054,
+    "apiRevisionId" : "85dbce23-92c8-4041-a633-d827ed446fec",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  } ],
+  "customAttributes" : {
+    "SWAGGER_INFO" : "{\n  \"description\" : \"FHIR CarePlan resource API documentation\",\n  \"version\" : \"1.0.0\",\n  \"title\" : \"CarePlan API\"\n}",
+    "SWAGGER_VERSION" : "2.0"
+  },
+  "createdTime" : 1443785453027
+}

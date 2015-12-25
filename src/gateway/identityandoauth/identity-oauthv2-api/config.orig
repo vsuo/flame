@@ -1,0 +1,124 @@
+{
+   "configurations":[
+     {
+         "name":"prod",
+
+         "policies":[
+         {
+                    "name": "redirectToConsent.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Location']",
+                            "value": "https://__HOST__/openid/onnet?sessionid={sessionid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "GetUserProfileFromAppServices.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/identity-users/v1/users/{accesstoken.userid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "AssignStoreConsentRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Authorization']",
+                            "value": "ClientCredential __AUTH__"
+                        }
+                    ]
+                },
+				{
+                    "name": "StoreConsent.ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/identity/consents"
+                        }
+                    ]
+                },
+                {
+                    "name": "AssignIssuer.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/AssignVariable/Value",
+                            "value": "https://__HOST__/"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      },
+     {
+         "name":"test",
+
+         "policies":[
+           {
+                    "name": "redirectToConsent.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Location']",
+                            "value": "https://__HOST__/openid/onnet?sessionid={sessionid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "GetUserProfileFromAppServices.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/identity-users/v1/users/{accesstoken.userid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "AssignStoreConsentRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Authorization']",
+                            "value": "ClientCredential __AUTH__"
+                        }
+                    ]
+                },
+				{
+                    "name": "StoreConsent.ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/identity/consents"
+                        }
+                    ]
+                },
+                {
+                    "name": "AssignIssuer.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/AssignVariable/Value",
+                            "value": "https://__HOST__/"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      },
+	{
+         "name":"demo",
+
+         "policies":[
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      }
+   ]
+}

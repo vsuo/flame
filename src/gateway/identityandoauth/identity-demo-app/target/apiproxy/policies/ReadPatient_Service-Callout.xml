@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="false" enabled="true" name="ReadPatient_Service-Callout">
+    <DisplayName>ReadPatient_Service Callout</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="read_patient_request">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>read_patient_response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/v2/Patient</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

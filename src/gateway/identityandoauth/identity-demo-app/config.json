@@ -1,0 +1,218 @@
+{
+   "configurations":[
+      {
+         "name":"prod",
+
+         "policies":[
+         {
+                    "name": "AddAuthorizationReqVarInReq.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='client_id']",
+                            "value": "__APIKEY__"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='redirect_uri']",
+                            "value": "https://__HOST__/identity_app/callback"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='authorization_req_url']",
+                            "value": "https://__HOST__/oauth/v2/authorize"
+                        }
+                    ]
+                },
+           {
+                    "name": "GetAccessToken_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/oauth/v2/accesstoken"
+                        }
+                    ]
+                },
+           {
+                    "name": "GetUserDetails_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/oauth/v2/getdetails"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadPatient_Service-Callout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Patient"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadEncounterById_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Encounter"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadPatientEncounterDetails_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Encounter"
+                        }
+                    ]
+                },
+                {
+                    "name": "AssignGetAccessTokenRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='client_id']",
+                            "value": "__APIKEY__"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='redirect_uri']",
+                            "value": "https://__HOST__/identity_app/callback"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='client_secret']",
+                            "value": "__APISECRET__"
+                        }
+                    ]
+                },
+				{
+                    "name": "AddPatientDetailsToRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='get_all_encounters_uri']",
+                            "value": "https://__HOST__/identity_app/getEncounters"
+                        }
+                    ]
+                },
+				{
+                    "name": "AddPatientEncounterDetailsToRequestt.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='get_encounter']",
+                            "value": "https://__HOST__/identity_app/Encounter"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      },
+     {
+         "name":"test",
+
+         "policies":[
+         {
+                    "name": "AddAuthorizationReqVarInReq.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='client_id']",
+                            "value": "__APIKEY__"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='redirect_uri']",
+                            "value": "https://__HOST__/identity_app/callback"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='authorization_req_url']",
+                            "value": "https://__HOST__/oauth/v2/authorize"
+                        }
+                    ]
+                },
+           {
+                    "name": "GetAccessToken_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/oauth/v2/accesstoken"
+                        }
+                    ]
+                },
+           {
+                    "name": "GetUserDetails_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/oauth/v2/getdetails"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadPatient_Service-Callout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Patient"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadEncounterById_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Encounter"
+                        }
+                    ]
+                },
+				{
+                    "name": "ReadPatientEncounterDetails_ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "https://__HOST__/v2/Encounter"
+                        }
+                    ]
+                },
+                {
+                    "name": "AssignGetAccessTokenRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='client_id']",
+                            "value": "__APIKEY__"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='redirect_uri']",
+                            "value": "https://__HOST__/identity_app/callback"
+                        },
+                        {
+                            "xpath": "/AssignMessage/Set/FormParams/FormParam[@name='client_secret']",
+                            "value": "__APISECRET__"
+                        }
+                    ]
+                },
+				{
+                    "name": "AddPatientDetailsToRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='get_all_encounters_uri']",
+                            "value": "https://__HOST__/identity_app/getEncounters"
+                        }
+                    ]
+                },
+				{
+                    "name": "AddPatientEncounterDetailsToRequestt.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/QueryParams/QueryParam[@name='get_encounter']",
+                            "value": "https://__HOST__/identity_app/Encounter"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      }
+   ]
+}

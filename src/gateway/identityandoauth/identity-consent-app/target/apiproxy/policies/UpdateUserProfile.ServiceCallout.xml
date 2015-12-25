@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="UpdateUserProfile.ServiceCallout">
+    <Request clearPayload="false" variable="updateUserRequest">
+         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>updateUserResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/identity-users/v1/users/{request.formparam.email}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

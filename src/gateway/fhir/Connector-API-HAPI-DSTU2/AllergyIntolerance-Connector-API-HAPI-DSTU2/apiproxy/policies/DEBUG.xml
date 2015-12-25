@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="DEBUG">
+    <DisplayName>DEBUG</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AssignVariable>
+        <Name>DEBUG1</Name>
+      <Ref>primaryResource</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>DEBUG2</Name>
+      <Ref>primaryResourceId</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>DEBUG3</Name>
+      <Ref>subResource</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

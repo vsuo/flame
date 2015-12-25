@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="ExtractTokenAttributes">
+    <DisplayName>ExtractTokenAttributes</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AssignVariable>
+        <Name>dataStoreOrgName</Name>
+      <Ref>accesstoken.appServicesOrgName</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>dataStoreAppName</Name>
+      <Ref>accesstoken.appServicesAppName</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>dataStoreAppConsumerKey</Name>
+      <Ref>accesstoken.appServicesConsumerKey</Ref>
+    </AssignVariable>
+  <AssignVariable>
+    <Name>dataStoreAccessToken</Name>
+    <Ref>accesstoken.appServicesAccessToken</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>username</Name>
+    <Ref>accesstoken.username</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>userDisplayName</Name>
+    <Ref>accesstoken.userDisplayName</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>patient_id</Name>
+    <Ref>accesstoken.patient_id</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>authorizations</Name>
+    <Ref>accesstoken.authorizations</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>isInternalApplication</Name>
+    <Ref>accesstoken.isInternalApplication</Ref>
+  </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

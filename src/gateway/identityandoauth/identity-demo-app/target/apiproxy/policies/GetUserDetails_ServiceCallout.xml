@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="false" name="GetUserDetails_ServiceCallout">
+    <Request clearPayload="false" variable="get_user_details_request">
+         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>get_user_details_response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/oauth/v2/getdetails</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

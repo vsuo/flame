@@ -1,0 +1,100 @@
+{
+  "id" : "86f5eff9-406c-4a58-ac63-52b058901d60",
+  "revisionNumber" : 2,
+  "baseUrl" : "https://fhirsandbox-test.apigee.net/oauth/v2",
+  "releaseVersion" : "1.0.0",
+  "resources" : [ {
+    "id" : "aaf0941a-62ae-463f-aa91-17c98a975627",
+    "name" : "/accesstoken?grant_type=client_credentials",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/oauth/v2",
+    "path" : "/accesstoken?grant_type=client_credentials",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json", "application/xml" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "c09b347f-b949-49d2-b1b3-a60584abbfa3",
+      "name" : "/accesstoken?grant_type=client_credentials-post",
+      "displayName" : "Client Credentials Grant Type",
+      "description" : "<p>Generates access token using client credentials grant type.</p>\n",
+      "verb" : "POST",
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json", "application/xml" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Base64 URL encoded clientid:clientsecret. For example: Basic Base64-encoding of Client ID and Client Secret",
+        "name" : "Authorization",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "defaultValue" : "application/x-www-form-urlencoded",
+        "description" : "Content-Type is used to declare the general type of POST data.",
+        "name" : "Content-Type",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A string that will be sent back with the response. Typically used to prevent cross-site request forgery attacks.",
+        "name" : "state",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Allows to filter the list of API products with which the minted token can be used.",
+        "name" : "scope",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "accept" : "application/x-www-form-urlencoded",
+        "attachments" : [ ],
+        "contentType" : "application/json,application/xml",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json\", \"application/xml\" ]"
+      },
+      "createdTime" : 1443787037791,
+      "modifiedTime" : 1443787140049,
+      "apiRevisionId" : "86f5eff9-406c-4a58-ac63-52b058901d60",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/oauth/v2",
+      "methods" : [ ],
+      "path" : "/accesstoken?grant_type=client_credentials",
+      "resourceId" : "aaf0941a-62ae-463f-aa91-17c98a975627",
+      "resourceName" : "/accesstoken?grant_type=client_credentials",
+      "resources" : [ ],
+      "revisionNumber" : 2
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/accesstoken?grant_type=client_credentials",
+      "SWAGGER_PRODUCES" : "[ \"application/json\", \"application/xml\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787037790,
+    "apiRevisionId" : "86f5eff9-406c-4a58-ac63-52b058901d60",
+    "resources" : [ ],
+    "revisionNumber" : 2
+  } ],
+  "customAttributes" : {
+    "SWAGGER_INFO" : "{\n  \"description\" : \"OAuth API documentation\",\n  \"version\" : \"1.0.0\",\n  \"title\" : \"Authorization API\"\n}",
+    "SWAGGER_VERSION" : "2.0"
+  },
+  "createdTime" : 1443787037759
+}

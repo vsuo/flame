@@ -1,0 +1,2153 @@
+{
+  "id" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+  "revisionNumber" : 1,
+  "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+  "releaseVersion" : "1.0.0",
+  "resources" : [ {
+    "id" : "c27b2dbb-9fe1-4ec4-a70d-c4c802045b63",
+    "name" : "/{id}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "3b4e02ec-1b26-41a4-bfd8-94647ad7bca6",
+      "name" : "/{id}-get",
+      "displayName" : "Read DiagnosticOrder ",
+      "description" : "<p>Returns details of DiagnosticOrder having id given in path</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443795512890,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}",
+      "resourceId" : "c27b2dbb-9fe1-4ec4-a70d-c4c802045b63",
+      "resourceName" : "/{id}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "6d1f1b59-611f-4c9c-97e9-670629c66260",
+    "name" : "",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "a9dcc501-4d93-45bc-9a37-2b63054d4f76",
+      "name" : "-get",
+      "displayName" : "Read DiagnosticOrders",
+      "description" : "<p>Returns DiagnosticOrders based on filter criteria OR Provides provision for pagination (stateid, page, page_size &amp; _pretty are query parameters used for Paging).</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded or did this (Device, Practitioner).",
+        "name" : "actor",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Location of requested test (if applicable). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "bodysite",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Code to indicate the item (test or panel) being ordered. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The encounter that this diagnostic order is associated with (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : " The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "event-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of past-status and date. Value should be in the form: [status]$[date]",
+        "name" : "event-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Identifiers assigned to this order. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-past-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of item-past-status and item-date. Value should be in the form: [status]$[date]",
+        "name" : "item-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who ordered the test (Practitioner).",
+        "name" : "orderer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "If the whole order relates to specific specimens (Specimen).",
+        "name" : "specimen",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Device, Location, Patient, Group).",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Unique id associated with a page.",
+        "name" : "stateid",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "DiagnosticOrder resource offset.",
+        "name" : "page",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "The number of DiagnosticOrder resources requested in a page.",
+        "name" : "page_size",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "Set true to get prettified data.",
+        "name" : "_pretty",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681465,
+      "modifiedTime" : 1443795513946,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "",
+      "resourceId" : "6d1f1b59-611f-4c9c-97e9-670629c66260",
+      "resourceName" : "",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "4a760b03-8781-4cbc-883c-628c0d7cd876",
+    "name" : "/{id}/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "6d01cc2b-7e6c-4fe6-b79f-ba3865e4eafe",
+      "name" : "/{id}/_history-get",
+      "displayName" : "DiagnosticOrder History",
+      "description" : "<p>It retrieves the history of a particular DiagnosticOrder identified by the given id in path.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443795514671,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}/_history",
+      "resourceId" : "4a760b03-8781-4cbc-883c-628c0d7cd876",
+      "resourceName" : "/{id}/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "f546a379-d97a-41db-b7b3-5e9955851333",
+    "name" : "/{id}/_history/{vid}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}/_history/{vid}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "523333ad-1c11-4229-9173-8e92c567f1c4",
+      "name" : "/{id}/_history/{vid}/$meta-get",
+      "displayName" : "DiagnosticOrder Version based Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given version of the DiagnosticOrder.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of DiagnosticOrder",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443796638781,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}/$meta",
+      "resourceId" : "f546a379-d97a-41db-b7b3-5e9955851333",
+      "resourceName" : "/{id}/_history/{vid}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "c8505d09-b11f-42cb-8548-d360535d67fd",
+    "name" : "/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "d8eac345-068f-49d3-8484-982041a699eb",
+      "name" : "/_history-get",
+      "displayName" : "DiagnosticOrders History",
+      "description" : "<p>It retrieves the history of all resources of DiagnosticOrder.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681465,
+      "modifiedTime" : 1443795509612,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/_history",
+      "resourceId" : "c8505d09-b11f-42cb-8548-d360535d67fd",
+      "resourceName" : "/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "7fe00792-a2c4-46bd-b589-938ae247162c",
+    "name" : "/{id}/_history/{vid}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}/_history/{vid}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "2fde9324-f976-4d8b-9f99-5290015cf3d5",
+      "name" : "/{id}/_history/{vid}-get",
+      "displayName" : "DiagnosticOrder Version Read",
+      "description" : "<p>This interaction preforms a version specific read of DiagnosticOrder resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of DiagnosticOrder",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443795510576,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}",
+      "resourceId" : "7fe00792-a2c4-46bd-b589-938ae247162c",
+      "resourceName" : "/{id}/_history/{vid}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "2452331c-c1ea-4afa-967c-9ee3c221eee0",
+    "name" : "/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "06fcbabb-18b0-4b47-abee-8ccf5272f33c",
+      "name" : "/$meta-get",
+      "displayName" : "DiagnosticOrders Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for DiagnosticOrder.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681465,
+      "modifiedTime" : 1443795511327,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/$meta",
+      "resourceId" : "2452331c-c1ea-4afa-967c-9ee3c221eee0",
+      "resourceName" : "/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "fc4f95ad-d3be-4c27-ae5d-e5603863b850",
+    "name" : "/{id}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "fd10f0b6-b8a3-4555-b985-ea015d451974",
+      "name" : "/{id}/$meta-get",
+      "displayName" : "DiagnosticOrder Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given DiagnosticOrder resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443795512157,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}/$meta",
+      "resourceId" : "fc4f95ad-d3be-4c27-ae5d-e5603863b850",
+      "resourceName" : "/{id}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "7c8131f0-fea9-4c60-8d4f-e284626a3669",
+    "name" : "/_search",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/_search",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "3faf3735-29d4-45c7-8afc-7de177bf0f30",
+      "name" : "/_search-get",
+      "displayName" : "DiagnosticOrders Search",
+      "description" : "<p>Search DiagnosticOrders based on some filter criteria.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded or did this (Device, Practitioner).",
+        "name" : "actor",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Location of requested test (if applicable). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "bodysite",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Code to indicate the item (test or panel) being ordered. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The encounter that this diagnostic order is associated with (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : " The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "event-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of past-status and date. Value should be in the form: [status]$[date]",
+        "name" : "event-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Identifiers assigned to this order. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-past-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of item-past-status and item-date. Value should be in the form: [status]$[date]",
+        "name" : "item-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who ordered the test (Practitioner).",
+        "name" : "orderer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "If the whole order relates to specific specimens (Specimen).",
+        "name" : "specimen",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Device, Location, Patient, Group).",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681465,
+      "modifiedTime" : 1443795507583,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "7c8131f0-fea9-4c60-8d4f-e284626a3669",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    }, {
+      "id" : "01ec7c14-4598-4bd1-99d7-eb2c658d43d8",
+      "name" : "/_search-post",
+      "displayName" : "DiagnosticOrders Search",
+      "description" : "<p>This interaction searches a set of DiagnosticOrders based on some filter criteria. Search interactions take a series of parameters of name'='value pairs encoded as an application/x-www-form-urlencoded submission for a POST.</p>\n",
+      "verb" : "POST",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "defaultValue" : "application/x-www-form-urlencoded",
+        "description" : "Specifies the format of data in body",
+        "name" : "Content-Type",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded or did this (Device, Practitioner).",
+        "name" : "actor",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Location of requested test (if applicable). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "bodysite",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Code to indicate the item (test or panel) being ordered. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The encounter that this diagnostic order is associated with (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : " The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "event-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of past-status and date. Value should be in the form: [status]$[date]",
+        "name" : "event-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Identifiers assigned to this order. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-past-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of item-past-status and item-date. Value should be in the form: [status]$[date]",
+        "name" : "item-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who ordered the test (Practitioner).",
+        "name" : "orderer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "If the whole order relates to specific specimens (Specimen).",
+        "name" : "specimen",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Device, Location, Patient, Group).",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+          "name" : "_id",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+          "name" : "_elements",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_profile",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_tag",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_security",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "integer",
+          "description" : "The number of resources that should be returned in a single page.",
+          "name" : "_count",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "boolean",
+          "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+          "name" : "_summary",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_include",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_revinclude",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:asc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:desc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who recorded or did this (Device, Practitioner).",
+          "name" : "actor",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Location of requested test (if applicable). Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "bodysite",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Code to indicate the item (test or panel) being ordered. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "code",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The encounter that this diagnostic order is associated with (Encounter).",
+          "name" : "encounter",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "event-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : " The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "event-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "event-status",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "A combination of past-status and date. Value should be in the form: [status]$[date]",
+          "name" : "event-status-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Identifiers assigned to this order. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "identifier",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "item-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "item-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "item-past-status",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "item-status",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "A combination of item-past-status and item-date. Value should be in the form: [status]$[date]",
+          "name" : "item-status-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who ordered the test (Practitioner).",
+          "name" : "orderer",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who and/or what test is about (Patient).",
+          "name" : "patient",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "If the whole order relates to specific specimens (Specimen).",
+          "name" : "specimen",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "status",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who and/or what test is about (Device, Location, Patient, Group).",
+          "name" : "subject",
+          "required" : false,
+          "type" : "body"
+        } ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681465,
+      "modifiedTime" : 1443795508725,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "7c8131f0-fea9-4c60-8d4f-e284626a3669",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_search",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "4cee058c-1d41-4a9a-8638-c48b181ab1a5",
+    "name" : "/{id}/{type}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+    "path" : "/{id}/{type}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "05a0da0c-ac92-45b2-a666-c58d3ce42f03",
+      "name" : "/{id}/{type}-get",
+      "displayName" : "Compartment Search",
+      "description" : "<p>Search the specified resource type in DiagnosticOrder compartment.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Type of Resource",
+        "name" : "type",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the DiagnosticOrder. Sample ids are: 13129, 13320, 13324, 13109, 13100.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded or did this (Device, Practitioner).",
+        "name" : "actor",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Location of requested test (if applicable). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "bodysite",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Code to indicate the item (test or panel) being ordered. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "code",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The encounter that this diagnostic order is associated with (Encounter).",
+        "name" : "encounter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : " The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "event-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "event-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of past-status and date. Value should be in the form: [status]$[date]",
+        "name" : "event-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Identifiers assigned to this order. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The date at which the event happened. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "item-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-past-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "item-status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "A combination of item-past-status and item-date. Value should be in the form: [status]$[date]",
+        "name" : "item-status-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who ordered the test (Practitioner).",
+        "name" : "orderer",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "If the whole order relates to specific specimens (Specimen).",
+        "name" : "specimen",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "proposed | draft | planned | requested | received | accepted | in-progress | review | completed | cancelled | suspended | rejected | failed. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who and/or what test is about (Device, Location, Patient, Group).",
+        "name" : "subject",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443787681466,
+      "modifiedTime" : 1443795509030,
+      "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/DiagnosticOrder",
+      "methods" : [ ],
+      "path" : "/{id}/{type}",
+      "resourceId" : "4cee058c-1d41-4a9a-8638-c48b181ab1a5",
+      "resourceName" : "/{id}/{type}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/{type}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443787681461,
+    "apiRevisionId" : "f6efe2e4-6e29-4397-b4b3-bb7bb118d669",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  } ],
+  "customAttributes" : {
+    "SWAGGER_INFO" : "{\n  \"description\" : \"FHIR DiagnosticOrder resource API documentation\",\n  \"version\" : \"1.0.0\",\n  \"title\" : \"DiagnosticOrder API\"\n}",
+    "SWAGGER_VERSION" : "2.0"
+  },
+  "createdTime" : 1443787681438
+}

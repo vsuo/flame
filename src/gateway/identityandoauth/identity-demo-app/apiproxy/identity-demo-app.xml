@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="16" name="NodeJsConsentApp">
+    <ConfigurationVersion minorVersion="0" majorVersion="4"/>
+    <CreatedAt>1368621989319</CreatedAt>
+    <CreatedBy>mcarpenter@apigee.com</CreatedBy>
+    <Description>Manish</Description>
+    <DisplayName>NodeJsConsentApp</DisplayName>
+    <LastModifiedAt>1368621989319</LastModifiedAt>
+    <LastModifiedBy>dey.santanu@gmail.com</LastModifiedBy>
+    <Policies>
+        <Policy>AddAuthorizationReqVarInReq</Policy>
+        <Policy>AddEncounterDetailsToRequest</Policy>
+        <Policy>AddPatientDetailsToRequest</Policy>
+        <Policy>AddPatientEncounterDetailsToRequestt</Policy>
+        <Policy>AddUserDetailsToRequest</Policy>
+        <Policy>AssignGetAccessTokenRequest</Policy>
+        <Policy>AssignGetUserDetailsRequest</Policy>
+        <Policy>AssignReadEncounterRequest</Policy>
+        <Policy>AssignReadPatientEncounterRequest</Policy>
+        <Policy>AssignReadPatientRequest</Policy>
+        <Policy>ExtractEncounterIdFromQueryParams</Policy>
+        <Policy>ExtractAccessTokenFromResponse</Policy>
+        <Policy>ExtractEncounterDetailsFromResponse</Policy>
+        <Policy>ExtractPatientDetailsFromResponse</Policy>
+        <Policy>ExtractPatientEncounterDetailsFromResponse</Policy>
+        <Policy>ExtractUserDetailsFromResponse</Policy>
+        <Policy>GetAccessToken_ServiceCallout</Policy>
+        <Policy>GetUserDetails_ServiceCallout</Policy>
+		<Policy>GetVariablesFromSession</Policy>
+        <Policy>ReadEncounterById_ServiceCallout</Policy>
+        <Policy>ReadPatientEncounterDetails_ServiceCallout</Policy>
+        <Policy>ReadPatient_Service-Callout</Policy>
+        <Policy>RedirectToError</Policy>
+		<Policy>GetVariablesFromSession</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

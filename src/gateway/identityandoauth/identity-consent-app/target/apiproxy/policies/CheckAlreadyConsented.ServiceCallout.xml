@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" description="CheckAlreadyConsented.ServiceCallout" enabled="true" name="CheckAlreadyConsented.ServiceCallout">
+    <DisplayName>CheckAlreadyConsented.ServiceCallout</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Request clearPayload="true">
+        <Set>
+            <Headers>
+                <Header name="Accept">application/json</Header>
+        	    <Header name="Authorization">[TO_BE_REPLACED]</Header>
+            </Headers>
+            
+      <QueryParams>
+        <QueryParam name="client_id">{client_id}</QueryParam>
+        <QueryParam name="user_id">{userid}</QueryParam>
+     </QueryParams>
+            <Verb>GET</Verb>
+        </Set>
+    </Request>
+    <Response>previousConsentResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/identity/consents/validate</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

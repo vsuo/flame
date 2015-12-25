@@ -1,0 +1,128 @@
+HOST=__CHOST__
+
+ARRSOURCEIP[0]=0.0.0.0
+ARRSOURCEIP[1]=0.0.0.0
+ARRSOURCEIP[2]=0.0.0.0
+ARRSOURCEIP[3]=0.0.0.0
+ARRSOURCEIP[4]=0.0.0.0
+ARRSOURCEIP[5]=0.0.0.0
+ARRSOURCEIP[6]=0.0.0.0
+ARRSOURCEIP[7]=0.0.0.0
+ARRSOURCEIP[8]=0.0.0.0
+ARRSOURCEIP[9]=0.0.0.0
+ARRSOURCEIP[10]=0.0.0.0
+
+SOURCEIPSTATUS="false"
+
+if [ -z "${SOURCEFLAG}" ]; then
+    echo "To enable connector proxy security, press Y else press N [ENTER]:"
+    read SOURCEFLAG
+fi
+
+if [[ $SOURCEFLAG == "y" || $SOURCEFLAG == "Y" ]]; then
+	if [ -z "${SOURCEIPCOUNT}" ]; then
+		echo "Enter the number of IP address(max 10), followed by [ENTER]:"
+		read SOURCEIPCOUNT
+	fi
+	if [[ $SOURCEIPCOUNT -ge 1 && $SOURCEIPCOUNT -le 10 ]]; then
+		SOURCEIPSTATUS="true"
+		index=0
+		while [ $index -lt $SOURCEIPCOUNT ]; do
+			echo "Enter IP address number $(( index+1 )) : followed by [ENTER]:"
+			read ARRSOURCEIP[$index]
+			index=$(( index+1 ))
+		done
+	else
+		echo "Invalid IP Count ${SOURCEIPCOUNT}"
+	fi
+else
+	SOURCEIPSTATUS="false"
+fi
+
+makeDynamicVariableChange() {
+	unamestr=`uname`
+	if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
+		if [ -n "$1" ]; then
+			sed -i  "s/__HOST__/$HOST/g" ..$1
+		fi
+		if [ -n "$2" ]; then
+			sed -i  "s/__STATUSFLAG__/$SOURCEIPSTATUS/g" ..$2
+			index=1
+			for ip in "${ARRSOURCEIP[@]}"
+			do
+				str="__SOURCEADDRESS${index}__"
+				sed -i  "s/$str/$ip/g" ..$2
+				index=$(( index+1 ))
+			done
+		fi
+		if [ -n "$3" ]; then
+			sed -i  "s/__STATUSFLAG__/$SOURCEIPSTATUS/g" ..$3
+			index=1
+			for ip in "${ARRSOURCEIP[@]}"
+			do
+				str="__SOURCEADDRESS${index}__"
+				sed -i  "s/$str/$ip/g" ..$3
+				index=$(( index+1 ))
+			done
+		fi
+	else
+		if [ -n "$1" ]; then
+			sed -i "" "s/__HOST__/$HOST/g" ..$1
+		fi
+		if [ -n "$2" ]; then
+			sed -i "" "s/__STATUSFLAG__/$SOURCEIPSTATUS/g" ..$2
+			index=1
+			for ip in "${ARRSOURCEIP[@]}"
+			do
+				str="__SOURCEADDRESS${index}__"
+				sed -i "" "s/$str/$ip/g" ..$2
+				index=$(( index+1 ))
+			done
+		fi
+		if [ -n "$3" ]; then
+			sed -i "" "s/__STATUSFLAG__/$SOURCEIPSTATUS/g" ..$3
+			index=1
+			for ip in "${ARRSOURCEIP[@]}"
+			do
+				str="__SOURCEADDRESS${index}__"
+				sed -i  "" "s/$str/$ip/g" ..$3
+				index=$(( index+1 ))
+			done
+		fi
+	fi
+}
+	
+#Patient-FHIR-API
+makeDynamicVariableChange "/Patient-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Patient-Connector-API-HAPI-DSTU2/config.json"
+#AllergyIntolerance-FHIR-API	
+makeDynamicVariableChange "/AllergyIntolerance-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/AllergyIntolerance-Connector-API-HAPI-DSTU2/config.json"
+#BasePath-FHIR-API
+makeDynamicVariableChange "/BasePath-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/BasePath-Connector-API-HAPI-DSTU2/config.json" "/Connector-API-SPARK-DSTU2/BasePath-Connector-API-SPARK-DSTU2/config.json"
+#CarePlan-FHIR-API
+makeDynamicVariableChange "/CarePlan-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/CarePlan-Connector-API-HAPI-DSTU2/config.json"
+#Condition-FHIR-API
+makeDynamicVariableChange "/Condition-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Condition-Connector-API-HAPI-DSTU2/config.json"
+#DiagnosticOrder-FHIR-API
+makeDynamicVariableChange "/DiagnosticOrder-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/DiagnosticOrder-Connector-API-HAPI-DSTU2/config.json"
+#DiagnosticReport-FHIR-API
+makeDynamicVariableChange "/DiagnosticReport-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/DiagnosticReport-Connector-API-HAPI-DSTU2/config.json"
+#DocumentReference-FHIR-API
+makeDynamicVariableChange "/DocumentReference-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/DocumentReference-Connector-API-HAPI-DSTU2/config.json"
+#Encounter-FHIR-API
+makeDynamicVariableChange "/Encounter-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Encounter-Connector-API-HAPI-DSTU2/config.json"
+#Immunization-FHIR-API
+makeDynamicVariableChange "/Immunization-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Immunization-Connector-API-HAPI-DSTU2/config.json"
+#MedicationAdministration-FHIR-API
+makeDynamicVariableChange "/MedicationAdministration-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/MedicationAdministration-Connector-API-HAPI-DSTU2/config.json"
+#MedicationDispense-FHIR-API
+makeDynamicVariableChange "/MedicationDispense-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/MedicationDispense-Connector-API-HAPI-DSTU2/config.json"
+#MedicationOrder-FHIR-API
+makeDynamicVariableChange "/MedicationOrder-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/MedicationOrder-Connector-API-HAPI-DSTU2/config.json"
+#MedicationStatement-FHIR-API
+makeDynamicVariableChange "/MedicationStatement-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/MedicationStatement-Connector-API-HAPI-DSTU2/config.json"
+#Observation-FHIR-API
+makeDynamicVariableChange "/Observation-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Observation-Connector-API-HAPI-DSTU2/config.json"
+#Practitioner-FHIR-API
+makeDynamicVariableChange "/Practitioner-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Practitioner-Connector-API-HAPI-DSTU2/config.json"
+#Procedure-FHIR-API
+makeDynamicVariableChange "/Procedure-FHIR-API/config.json" "/Connector-API-HAPI-DSTU2/Procedure-Connector-API-HAPI-DSTU2/config.json"

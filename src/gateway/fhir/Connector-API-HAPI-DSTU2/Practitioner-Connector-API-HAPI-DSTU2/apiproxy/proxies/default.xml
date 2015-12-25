@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <DefaultFaultRule name="generic_fault_handler">
+        <Step>
+            <Name>Fault_GenericFault</Name>
+        </Step>
+        <!-- <AlwaysEnforce>true</AlwaysEnforce> -->
+    </DefaultFaultRule>
+    <FaultRules>
+        <FaultRule name="access_forbidden">
+            <Step>
+                <Name>Fault_AccessControl</Name>
+            </Step>
+            <Condition>fault.name = "IPDeniedAccess"</Condition>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request>
+            <!-- This policy allow access to only listed hosts. -->
+            <Step>
+                <Name>AccessControl</Name>
+            </Step>
+			<!--This AssignMessage policy initialize required variable in flow. -->
+            <Step>
+                <Name>InitialConfiguration</Name>
+            </Step>
+			<!-- This ExtractVariable policy extracts the following variables: primaryResource, primaryresourceId, versionID, subResource, subResourceId.-->
+            <Step>
+                <Name>ExtractPrimaryResourceTypeAndId</Name>
+            </Step>
+			<!-- This AssignMessage policy sets  returnType to 'request.header.Accept' value.-->
+            <Step>
+                <Name>SetReturnType</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+		<Flow name="fetch_pagination_data">
+            <Description/>
+            <Request>
+				<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+				<!-- This AssignMessage policy sets required query parameters and remove extra  query parameters in request.-->
+              <Step>
+                    <Name>AssignPaginationAttributes</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+           <Condition>((request.verb = "GET") and (request.queryparam.stateid != null and request.queryparam.stateid != "" ))		</Condition>
+       </Flow>
+        <Flow name="resource_retrieve_all_of_type">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+			<!-- This policy sets patient_id in queryparam. -->
+                <Step>
+                    <Name>SetPatientId</Name>
+                    <Condition>request.header.patient!=null and request.header.patient!=""</Condition>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/") and (request.queryparams.count == 0)</Condition>
+        </Flow>
+        <Flow name="resource_search">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/" or proxy.pathsuffix MatchesPath "/_search")</Condition>
+        </Flow>
+        <Flow name="resource_search_post">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "POST" ) and (proxy.pathsuffix MatchesPath "/_search")</Condition>
+        </Flow>
+        <Flow name="resource_tag">
+            <Description>it gives the tags related to perticular resource</Description>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and ((proxy.pathsuffix MatchesPath "/$meta") or (proxy.pathsuffix MatchesPath "/*/$meta") or (proxy.pathsuffix MatchesPath "/*/_history/*/$meta"))</Condition>
+        </Flow>		
+        <Flow name="resource_history">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and ((proxy.pathsuffix MatchesPath "/_history") or (proxy.pathsuffix MatchesPath "/*/_history"))</Condition>
+        </Flow>
+        <Flow name="resource_read">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeResourceXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/*") and (request.queryparams.count == 0)</Condition>
+        </Flow>
+        <Flow name="resource_vread">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeResourceXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/*/_history/*")</Condition>
+        </Flow>
+        <Flow name="resource_compartment_search_condition">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/*/*") and (request.queryparams.count == 0)</Condition>
+        </Flow>
+        <Flow name="resource_compartment_search">
+            <Description/>
+            <Request>
+			<!-- This AssignMessage policy sets  accept header to 'application/xml'.-->
+                <Step>
+                    <Name>SetAcceptHeaderToXML</Name>
+                </Step>
+            </Request>
+            <Response>
+			<!-- This AssignMessage policy sets  'Content-Type' header to 'application/atom+xml;charset=UTF-8' if server does not set it.-->	
+                <Step>
+                    <Name>SetContentTypeBundleXML</Name>
+                    <Condition>response.header.Content-Type=null</Condition>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/*/*" or proxy.pathsuffix MatchesPath "/*") and (request.queryparams.count > 0)</Condition>
+        </Flow>
+        <Flow name="resource_update">
+            <Description/>
+            <Request>
+			<!-- This XMLThreatProtection policy checks if XML data sent in request satisfies certain parameters such as: NameLimits,
+			StructureLimits, ValueLimits, Source etc.  -->
+                <Step>
+                    <Name>CheckXMLThreat</Name>
+                    <Condition>request.header.Content-Type="application/xml"</Condition>
+                </Step>
+			<!-- This JSONThreatProtection policy checks if json data sent in request satisfies certain parameters such as: ArrayElementCount, 
+			ContainerDepth, ObjectEntryCount, ObjectEntryNameLength, Source, StringValueLength  .-->	
+                <Step>
+                    <Name>CheckJSONThreat</Name>
+                    <Condition>request.header.Content-Type="application/json"</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "PUT") and (proxy.pathsuffix MatchesPath "/*")</Condition>
+        </Flow>
+        <Flow name="resource_conditional_update">
+            <Description/>
+            <Request>
+			<!-- This XMLThreatProtection policy checks if XML data sent in request satisfies certain parameters such as: NameLimits,
+			StructureLimits, ValueLimits, Source etc.  -->            
+                <Step>
+                    <Name>CheckXMLThreat</Name>
+                    <Condition>request.header.Content-Type="application/xml"</Condition>
+                </Step>
+			<!-- This JSONThreatProtection policy checks if json data sent in request satisfies certain parameters such as: ArrayElementCount, 
+			ContainerDepth, ObjectEntryCount, ObjectEntryNameLength, Source, StringValueLength  .-->	
+                <Step>
+                    <Name>CheckJSONThreat</Name>
+                    <Condition>request.header.Content-Type="application/json"</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "PUT") and (proxy.pathsuffix MatchesPath "/*") and (request.queryparams.count > 0)</Condition>
+        </Flow>
+        <Flow name="resource_delete">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(request.verb = "DELETE") and (proxy.pathsuffix MatchesPath "/*")</Condition>
+        </Flow>
+        <Flow name="resource_conditional_delete">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(request.verb = "DELETE") and (proxy.pathsuffix MatchesPath "/*") and (request.queryparams.count > 0)</Condition>
+        </Flow>
+        <Flow name="resource_create">
+            <Description/>
+            <Request>
+			<!-- This XMLThreatProtection policy checks if XML data sent in request satisfies certain parameters such as: NameLimits,
+			StructureLimits, ValueLimits, Source etc.  -->            
+                <Step>
+                    <Name>CheckXMLThreat</Name>
+                    <Condition>request.header.Content-Type="application/xml"</Condition>
+                </Step>
+			<!-- This JSONThreatProtection policy checks if json data sent in request satisfies certain parameters such as: ArrayElementCount, 
+			ContainerDepth, ObjectEntryCount, ObjectEntryNameLength, Source, StringValueLength  .-->	
+                <Step>
+                    <Name>CheckJSONThreat</Name>
+                    <Condition>request.header.Content-Type="application/json"</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/" or proxy.pathsuffix MatchesPath "/*")</Condition>
+        </Flow>
+        <Flow name="resource_conditional_create">
+            <Description/>
+            <Request>
+			<!-- This XMLThreatProtection policy checks if XML data sent in request satisfies certain parameters such as: NameLimits,
+			StructureLimits, ValueLimits, Source etc.  -->            
+                <Step>
+                    <Name>CheckXMLThreat</Name>
+                    <Condition>request.header.Content-Type="application/xml"</Condition>
+                </Step>
+			<!-- This JSONThreatProtection policy checks if json data sent in request satisfies certain parameters such as: ArrayElementCount, 
+			ContainerDepth, ObjectEntryCount, ObjectEntryNameLength, Source, StringValueLength  .-->	
+                <Step>
+                    <Name>CheckJSONThreat</Name>
+                    <Condition>request.header.Content-Type="application/json"</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/*") and (request.queryparams.count > 0)</Condition>
+        </Flow>
+        <Flow name="default">
+            <!-- Need logic to determine if it's an invalid resource, bad parameter, etc. -->
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>Fault_UnknownResource</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+		<!-- This AssignMessage policy sets variables required for JavaCallout.-->
+            <Step>
+                <Name>SetFHIRConversionOptions</Name>
+                <Condition>response.header.Content-Type != returnType</Condition>
+            </Step>
+		<!-- This JavaCallout policy performs JSON-XML conversion. Execute when server response format does not match with user required format .-->
+            <Step>
+                <Name>FHIRConversion</Name>
+                <Condition>returnType  ~~ ".*json.*"</Condition>
+            </Step>
+		<!-- This AssignMessage policy sets response variables and content-->	
+            <Step>
+                <Name>SetResponseToConvertedDoc</Name>
+                <Condition>response.header.Content-Type != returnType</Condition>
+            </Step>
+			<!-- This JavaScriptCallout policy replaces the server specific URLS with proxy URL.-->
+            <Step>
+                <Name>ReplaceTargetLinkURLs</Name>
+            </Step>
+            <!-- This AssignMessage policy sets final 'proxyResponse' to paylaod.-->
+            <Step>
+                <Name>AssignProxyResponse</Name>
+            </Step>
+		<!-- This JavaScriptCallout policy sets Content-Length header.-->	
+            <Step>
+                <Name>SetContentLength</Name>
+                <Condition>(response.header.Transfer-Encoding = null) and (returnType != null)</Condition>
+            </Step>
+        </Response>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/hapi-dstu2/Practitioner</BasePath>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
+
+

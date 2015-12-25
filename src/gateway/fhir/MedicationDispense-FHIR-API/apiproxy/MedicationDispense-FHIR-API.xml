@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="MedicationDispense-FHIR-API">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1441789915349</CreatedAt>
+    <CreatedBy>surbhi_nijhara@persistent.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>MedicationDispense-FHIR-API</DisplayName>
+    <LastModifiedAt>1441791289845</LastModifiedAt>
+    <LastModifiedBy>surbhi_nijhara@persistent.com</LastModifiedBy>
+  <Policies>
+        <Policy>AddDeveloperToCache</Policy>
+        <Policy>CORSSupport</Policy>
+        <Policy>CheckPatientAuthorizations</Policy>
+        <Policy>CheckPayloadRegex</Policy>
+        <Policy>CheckQueryParamRegex</Policy>
+        <Policy>CheckURIParamRegex</Policy>
+        <Policy>EnforceQuota</Policy>
+        <Policy>EnforceRateLimit</Policy>
+        <Policy>ExtractDeveloperInfoFromDeveloper</Policy>
+        <Policy>ExtractDeveloperInfoFromDeveloperCache</Policy>
+        <Policy>ExtractTokenAttributes</Policy>
+        <Policy>Fault_AppNotAuthorizedForPatientData</Policy>
+        <Policy>Fault_GenericFault</Policy>
+        <Policy>Fault_InvalidCredentials</Policy>
+        <Policy>Fault_InvalidPayload</Policy>
+        <Policy>Fault_QuotaViolation</Policy>
+        <Policy>Fault_RegexThreat</Policy>
+        <Policy>Fault_UnknownResource</Policy>
+		<Policy>Fault_UnsupportedOperation</Policy>
+        <Policy>GetDeveloperFromCache</Policy>
+        <Policy>GetDeveloperInfo</Policy>
+        <Policy>GetResponseFormatFromQueryParam</Policy>
+        <Policy>InitialConfiguration</Policy>
+        <Policy>RemoveFormatQueryParam</Policy>
+        <Policy>ReplaceInternalProxyLinkURLs</Policy>
+        <Policy>Servicecallout.InvokeGET</Policy>
+        <Policy>Servicecallout.InvokePOSTSearch</Policy>
+        <Policy>SetAcceptHeader</Policy>
+        <Policy>VerifyAccessToken</Policy>
+    </Policies>
+      <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://CheckPatientAuthorizations.js</Resource>
+        <Resource>jsc://CheckQueryParamRegex.js</Resource>
+        <Resource>jsc://ReplaceInternalProxyLinkURLs.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>

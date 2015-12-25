@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Fault_AccessControl">
+    <DisplayName>Fault_AccessControl</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+          <Payload contentType="application/json"> 
+          	{
+			"resourceType": "OperationOutcome",
+			"text": {
+				"status": "generated",
+				  "div": "<div><h1>Operation Outcome</h1><table border='0'><tr><td style='font-weight: bold;'></td><td>[]</td><td><pre>Access Denied</pre></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+			},
+			"issue": [
+				{
+					"severity": "error",
+					"details": "Access Denied"
+				}
+			]
+			}
+          	</Payload>
+            <StatusCode>403</StatusCode>
+            <ReasonPhrase>Forbidden</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

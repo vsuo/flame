@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="SendSMS.ServiceCallout">
+    <FaultRules/>
+    <Properties/>
+    <Request clearPayload="false" variable="send_sms_request">
+         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>send_sms_response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/v1/token/sms/{msisdn}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

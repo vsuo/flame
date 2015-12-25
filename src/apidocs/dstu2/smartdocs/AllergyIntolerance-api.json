@@ -1,0 +1,2118 @@
+{
+  "id" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+  "revisionNumber" : 1,
+  "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+  "releaseVersion" : "1.0.0",
+  "resources" : [ {
+    "id" : "bf40e162-d98e-4abb-bccb-9a4a8d34e514",
+    "name" : "",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "91699fe8-7d86-4f2a-8995-19e269ccde85",
+      "name" : "-get",
+      "displayName" : "Read AllergyIntolerances",
+      "description" : "<p>Returns AllergyIntolerances based on filter criteria OR Provides provision for pagination (stateid, page, page_size &amp; _pretty are query parameters used for Paging).</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "food | medication | environment - Category of Substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "category",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "low | high | unassessible - Estimated potential clinical harm. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "criticality",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "External Ids for AllergyIntolerance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Clinical symptoms/signs associated with the Event. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "manifestation",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who the sensitivity is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded the sensitivity (Patient,Practitioner).",
+        "name" : "recorder",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Source of the information about the allergy (Patient,Practitioner,RelatedPerson).",
+        "name" : "reporter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "How the subject was exposed to the substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "route",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "mild | moderate | severe (of event as a whole). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "severity",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "unconfirmed | confirmed | resolved | refuted | entered-in-error. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Substance, (or class) considered to be responsible for risk. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "substance",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "immune | non-immune - Underlying mechanism (if known). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "type",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Unique id associated with a page.",
+        "name" : "stateid",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "AllergyIntolerance resource offset.",
+        "name" : "page",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "number",
+        "description" : "The number of AllergyIntolerance resources requested in a page.",
+        "name" : "page_size",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "Set true to get prettified data.",
+        "name" : "_pretty",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144213,
+      "modifiedTime" : 1443794165460,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "",
+      "resourceId" : "bf40e162-d98e-4abb-bccb-9a4a8d34e514",
+      "resourceName" : "",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144209,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "b336ecd8-7dc6-464f-a651-6039788a2ff0",
+    "name" : "/{id}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "d387b7b1-8a23-46b5-9633-7f028d8263b8",
+      "name" : "/{id}-get",
+      "displayName" : "Read AllergyIntolerance ",
+      "description" : "<p>Returns details of allergies having id given in path.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285382297,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}",
+      "resourceId" : "b336ecd8-7dc6-464f-a651-6039788a2ff0",
+      "resourceName" : "/{id}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "bd604fd3-4af0-46b4-af4a-59ce79a7cff3",
+    "name" : "/_search",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/_search",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "de405420-8e18-4732-8cc0-26dd7c794242",
+      "name" : "/_search-post",
+      "displayName" : "AllergyIntolerances Search",
+      "description" : "<p>This interaction searches a set of AllergyIntolerances based on some filter criteria. Search interactions take a series of parameters of name'='value pairs encoded as an application/x-www-form-urlencoded submission for a POST.</p>\n",
+      "verb" : "POST",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "defaultValue" : "application/x-www-form-urlencoded",
+        "description" : "Specifies the format of data in body",
+        "name" : "Content-Type",
+        "required" : true,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "food | medication | environment - Category of Substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "category",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "low | high | unassessible - Estimated potential clinical harm. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "criticality",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "External Ids for AllergyIntolerance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Clinical symptoms/signs associated with the Event. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "manifestation",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who the sensitivity is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded the sensitivity (Patient,Practitioner).",
+        "name" : "recorder",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Source of the information about the allergy (Patient,Practitioner,RelatedPerson).",
+        "name" : "reporter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "How the subject was exposed to the substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "route",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "mild | moderate | severe (of event as a whole). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "severity",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "unconfirmed | confirmed | resolved | refuted | entered-in-error. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Substance, (or class) considered to be responsible for risk. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "substance",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "immune | non-immune - Underlying mechanism (if known). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "type",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+          "name" : "_id",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+          "name" : "_elements",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "_lastUpdated",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_profile",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_tag",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+          "name" : "_security",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "integer",
+          "description" : "The number of resources that should be returned in a single page.",
+          "name" : "_count",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "boolean",
+          "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+          "name" : "_summary",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_include",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+          "name" : "_revinclude",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:asc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+          "name" : "_sort:desc",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "food | medication | environment - Category of Substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "category",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "low | high | unassessible - Estimated potential clinical harm. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "criticality",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "External Ids for AllergyIntolerance. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "identifier",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "last-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "last-date",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Clinical symptoms/signs associated with the Event. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "manifestation",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "onset",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+          "name" : "onset",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who the sensitivity is for (Patient).",
+          "name" : "patient",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Who recorded the sensitivity (Patient,Practitioner).",
+          "name" : "recorder",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Source of the information about the allergy (Patient,Practitioner,RelatedPerson).",
+          "name" : "reporter",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "How the subject was exposed to the substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "route",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "mild | moderate | severe (of event as a whole). Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "severity",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "unconfirmed | confirmed | resolved | refuted | entered-in-error. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "status",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "Substance, (or class) considered to be responsible for risk. Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "substance",
+          "required" : false,
+          "type" : "body"
+        }, {
+          "allowMultiple" : false,
+          "dataType" : "string",
+          "description" : "immune | non-immune - Underlying mechanism (if known). Value can have following formats: [code] or [system]|[code] or |[code].",
+          "name" : "type",
+          "required" : false,
+          "type" : "body"
+        } ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144213,
+      "modifiedTime" : 1443794166883,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "bd604fd3-4af0-46b4-af4a-59ce79a7cff3",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    }, {
+      "id" : "ccabf11d-6a6f-4c9f-bff7-e941913fd876",
+      "name" : "/_search-get",
+      "displayName" : "AllergyIntolerances Search",
+      "description" : "<p>Search AllergyIntolerances based on some filter criteria.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "food | medication | environment - Category of Substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "category",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "low | high | unassessible - Estimated potential clinical harm. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "criticality",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "External Ids for AllergyIntolerance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Clinical symptoms/signs associated with the Event. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "manifestation",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who the sensitivity is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded the sensitivity (Patient,Practitioner).",
+        "name" : "recorder",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Source of the information about the allergy (Patient,Practitioner,RelatedPerson).",
+        "name" : "reporter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "How the subject was exposed to the substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "route",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "mild | moderate | severe (of event as a whole). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "severity",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "unconfirmed | confirmed | resolved | refuted | entered-in-error. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Substance, (or class) considered to be responsible for risk. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "substance",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "immune | non-immune - Underlying mechanism (if known). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "type",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1443794164780,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/_search",
+      "resourceId" : "bd604fd3-4af0-46b4-af4a-59ce79a7cff3",
+      "resourceName" : "/_search",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_search",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "b9ed2aac-9698-4566-8953-e828de8db59e",
+    "name" : "/{id}/_history/{vid}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}/_history/{vid}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "034392dd-9d92-4f3a-a9c2-0a5bcaf6a4d7",
+      "name" : "/{id}/_history/{vid}-get",
+      "displayName" : "AllergyIntolerance Version Read",
+      "description" : "<p>This interaction preforms a version specific read of AllergyIntolerance resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of allergy",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285379113,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}",
+      "resourceId" : "b9ed2aac-9698-4566-8953-e828de8db59e",
+      "resourceName" : "/{id}/_history/{vid}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "6aef630c-c981-4e4d-a8c2-838d5808fce1",
+    "name" : "/{id}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "988439b7-6050-40d6-b029-734ac824192b",
+      "name" : "/{id}/$meta-get",
+      "displayName" : "AllergyIntolerance Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given AllergyIntolerance resource.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285380344,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}/$meta",
+      "resourceId" : "6aef630c-c981-4e4d-a8c2-838d5808fce1",
+      "resourceName" : "/{id}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "e6965182-c478-4e38-85cf-07678a1801d3",
+    "name" : "/{id}/{type}",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}/{type}",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "7ef05a92-d12f-4513-a1ab-62c94e4ad71c",
+      "name" : "/{id}/{type}-get",
+      "displayName" : "Compartment Search",
+      "description" : "<p>Search the specified resource type in AllergyIntolerance compartment.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Type of Resource",
+        "name" : "type",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "_id",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to specify set of elements be returned as part of a resource. The _elements parameter consists of a comma separated list of base element names.",
+        "name" : "_elements",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The search parameter _lastUpdated can be used to select resources based on the last time they were changed. The parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "_lastUpdated",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the profile element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_profile",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the tags element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_tag",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter searches on the security element in the meta element of the resource. Value can have following formats: [code] or [namespace]|[code] or |[code].",
+        "name" : "_security",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "The number of resources that should be returned in a single page.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "boolean",
+        "description" : "The _summary parameter requests the server to return only the elements marked as summary in their definition. ",
+        "name" : "_summary",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that it references. Parameter values for _include have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_include",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "This parameter can be used to fetch a particular resource, and any resources that refer to it. It can have a value of one of the possible search parameters. Parameter values for _revinclude have 3 parts, separated by a : separator. 1. The name of the source resource from which the join comes. 2. The name of the search parameter which must be of type reference. 3.(Optional) A specific of type of target resource (for when the search parameter refers to multiple possible target types)",
+        "name" : "_revinclude",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in default(ascending) order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in ascending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:asc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Used to order the results in descending order. The value can be one of the possible search parameters. The _sort parameter can repeat to indicate sort order, with the repeats indicating a lower sort priority sequentially.",
+        "name" : "_sort:desc",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "food | medication | environment - Category of Substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "category",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "low | high | unassessible - Estimated potential clinical harm. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "criticality",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Recorded date/time. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "External Ids for AllergyIntolerance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "identifier",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) of last known occurence of a reaction. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "last-date",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Clinical symptoms/signs associated with the Event. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "manifestation",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Date(/time) when manifestations showed. The date parameter format is yyyy-mm-ddThh:nn:ss(TZ). Two dates can be used to specify an interval. The prefixes >, >=, <= and < may be used on the parameter value.",
+        "name" : "onset",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who the sensitivity is for (Patient).",
+        "name" : "patient",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Who recorded the sensitivity (Patient,Practitioner).",
+        "name" : "recorder",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Source of the information about the allergy (Patient,Practitioner,RelatedPerson).",
+        "name" : "reporter",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "How the subject was exposed to the substance. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "route",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "mild | moderate | severe (of event as a whole). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "severity",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "unconfirmed | confirmed | resolved | refuted | entered-in-error. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "status",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Substance, (or class) considered to be responsible for risk. Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "substance",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "immune | non-immune - Underlying mechanism (if known). Value can have following formats: [code] or [system]|[code] or |[code].",
+        "name" : "type",
+        "required" : false,
+        "type" : "query"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285381719,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}/{type}",
+      "resourceId" : "e6965182-c478-4e38-85cf-07678a1801d3",
+      "resourceName" : "/{id}/{type}",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/{type}",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "5868075a-897f-4a2a-a347-a3e0f62d6d97",
+    "name" : "/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "c51ff3e9-f26f-4e4f-9dfd-48e542879a80",
+      "name" : "/$meta-get",
+      "displayName" : "AllergyIntolerances Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for Allergies.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144213,
+      "modifiedTime" : 1444285372360,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/$meta",
+      "resourceId" : "5868075a-897f-4a2a-a347-a3e0f62d6d97",
+      "resourceName" : "/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "86aa608d-cc70-4e67-b429-323cdd98a48f",
+    "name" : "/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "047a906b-ef78-40da-be37-bf2bb8435cb4",
+      "name" : "/_history-get",
+      "displayName" : "AllergyIntolerances History",
+      "description" : "<p>It retrieves the history of all resources of AllergyIntolerance</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144213,
+      "modifiedTime" : 1444383901680,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/_history",
+      "resourceId" : "86aa608d-cc70-4e67-b429-323cdd98a48f",
+      "resourceName" : "/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "8f04cbc0-773a-4cb5-8f33-43d1399e05f0",
+    "name" : "/{id}/_history/{vid}/$meta",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}/_history/{vid}/$meta",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "474e5ccf-6637-4891-be52-e2555eb8301e",
+      "name" : "/{id}/_history/{vid}/$meta-get",
+      "displayName" : "AllergyIntolerance Version based Metadata",
+      "description" : "<p>Retrieves a summary of the profiles, tags, and security labels for given version of the AllergyIntolerance.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "IThe logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Version Id of patient",
+        "name" : "vid",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285376370,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}/_history/{vid}/$meta",
+      "resourceId" : "8f04cbc0-773a-4cb5-8f33-43d1399e05f0",
+      "resourceName" : "/{id}/_history/{vid}/$meta",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history/{vid}/$meta",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  }, {
+    "id" : "854e4b6b-d873-4cd3-b53b-47409c0c3ac4",
+    "name" : "/{id}/_history",
+    "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+    "path" : "/{id}/_history",
+    "parameters" : [ {
+      "dataType" : "string",
+      "name" : "Content-Type",
+      "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+      "type" : "header"
+    } ],
+    "methods" : [ {
+      "id" : "986f8201-5d15-4ff3-99ca-0fa8010cf93c",
+      "name" : "/{id}/_history-get",
+      "displayName" : "AllergyIntolerance History",
+      "description" : "<p>It retrieves the history of a particular AllergyIntolerance identified by the given id in path.</p>\n",
+      "verb" : "GET",
+      "security" : [ "oauth-2-0" ],
+      "parameters" : [ {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "",
+        "name" : "Content-Type",
+        "options" : [ "application/json+fhir;charset=UTF-8", "application/xml+fhir;charset=UTF-8" ],
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Format of data to be returned.",
+        "name" : "_format",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "integer",
+        "description" : "Number of records needed in response.",
+        "name" : "_count",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify an instant to only include resource versions that were created at or after the given instant in time. An instant in time is known at least to the second and always includes a time zone.",
+        "name" : "_since",
+        "required" : false,
+        "type" : "query"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The logical resource id associated with the AllergyIntolerance. Sample ids are: 11408, 11414, 10709, 19563, 19330.",
+        "name" : "id",
+        "required" : true,
+        "type" : "template"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "Specify access token for API in the following format: Bearer [access_token].",
+        "name" : "Authorization",
+        "required" : false,
+        "type" : "header"
+      }, {
+        "allowMultiple" : false,
+        "dataType" : "string",
+        "description" : "The Accept request-header field can be used to specify certain media types which are acceptable for the response.",
+        "name" : "Accept",
+        "required" : false,
+        "type" : "header"
+      } ],
+      "body" : {
+        "attachments" : [ ],
+        "contentType" : "application/json+fhir;charset=UTF-8,application/xml+fhir;charset=UTF-8",
+        "parameters" : [ ]
+      },
+      "response" : {
+        "errors" : [ ],
+        "parameters" : [ ]
+      },
+      "customAttributes" : {
+        "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]"
+      },
+      "createdTime" : 1443785144214,
+      "modifiedTime" : 1444285377435,
+      "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+      "baseUrl" : "https://fhirsandbox-test.apigee.net/v2/AllergyIntolerance",
+      "methods" : [ ],
+      "path" : "/{id}/_history",
+      "resourceId" : "854e4b6b-d873-4cd3-b53b-47409c0c3ac4",
+      "resourceName" : "/{id}/_history",
+      "resources" : [ ],
+      "revisionNumber" : 1
+    } ],
+    "customAttributes" : {
+      "SWAGGER_RESOURCE_PATH" : "/{id}/_history",
+      "SWAGGER_PRODUCES" : "[ \"application/json+fhir;charset=UTF-8\", \"application/xml+fhir;charset=UTF-8\" ]",
+      "SWAGGER_PROTOCOLS" : "[ \"https\" ]"
+    },
+    "createdTime" : 1443785144210,
+    "apiRevisionId" : "b5baf9a1-da62-416d-a117-4355cb19fdb0",
+    "resources" : [ ],
+    "revisionNumber" : 1
+  } ],
+  "customAttributes" : {
+    "SWAGGER_INFO" : "{\n  \"description\" : \"FHIR AllergyIntolerance resource API documentation\",\n  \"version\" : \"1.0.0\",\n  \"title\" : \"AllergyIntolerance API\"\n}",
+    "SWAGGER_VERSION" : "2.0"
+  },
+  "createdTime" : 1443785144189
+}

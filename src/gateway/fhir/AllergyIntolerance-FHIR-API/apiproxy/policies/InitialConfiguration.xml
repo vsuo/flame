@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="InitialConfiguration">
+    <DisplayName>InitialConfiguration</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>service_callout_domain</Name>
+      	<Value>[TO_BE_REPLACED]</Value> 
+    </AssignVariable>
+  	<AssignVariable>
+         <Name>service_callout_basepath</Name>
+      	<Value>[TO_BE_REPLACED]</Value>
+    </AssignVariable>  
+  	<AssignVariable>
+         <Name>primaryResource</Name>
+      	<Value>[TO_BE_REPLACED]</Value>
+    </AssignVariable>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

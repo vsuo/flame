@@ -1,0 +1,16 @@
+HOST=__CHOST__
+makeDynamicVariableChange() {
+	unamestr=`uname`
+	if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+		if [ -n "$1" ]; then
+			sed -i  "s/__HOST__/$HOST/g" $1
+		fi
+	else	
+		if [ -n "$1" ]; then
+			sed -i "" "s/__HOST__/$HOST/g" $1
+		fi
+	fi
+}
+
+#FHIR-API
+makeDynamicVariableChange "config.json"

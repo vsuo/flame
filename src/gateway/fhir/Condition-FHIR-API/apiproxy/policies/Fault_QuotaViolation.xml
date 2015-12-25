@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Fault_QuotaViolation">
+    <DisplayName>Fault_QuotaViolation</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">
+			{
+				"resourceType": "OperationOutcome",
+				"text": {
+					"status": "generated",
+					"div": "<div><h1>Operation Outcome</h1><table border='1'><tr><td style='font-weight: bold;'>error</td><td>[]</td><td><pre>Too Many Requests</pre></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+				},
+				"issue": [
+					{
+						"severity": "error",
+						"details": "Too Many Requests"
+					}
+				]
+			}
+
+            </Payload>
+            <StatusCode>429</StatusCode>
+            <ReasonPhrase>Too Many Requests</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

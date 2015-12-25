@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Fault_RegexThreat">
+    <DisplayName>Fault_RegexThreat</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">
+			{
+				"resourceType": "OperationOutcome",
+				"text": {
+					"status": "generated",
+					"div": "<div><h1>Operation Outcome</h1><table border='1'><tr><td style='font-weight: bold;'>error</td><td>[]</td><td><pre>Invalid Request</pre></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+				},
+				"issue": [
+					{
+						"severity": "error",
+						"details": "Invalid Request"
+					}
+				]
+			}
+            </Payload>
+            <StatusCode>401</StatusCode>
+            <ReasonPhrase>Unauthorized</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

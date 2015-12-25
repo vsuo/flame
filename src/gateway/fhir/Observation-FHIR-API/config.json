@@ -1,0 +1,117 @@
+{
+    "configurations": [
+        {
+            "name": "test",
+            "policies": [
+                {
+                    "name": "VerifyAccessToken.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/OAuthV2/Scope",
+                            "value": "observation.read patient/Observation.read patient/Observation.write user/Observation.read user/Observation.write"
+                        }
+                    ]
+                },
+				{
+                    "name": "InitialConfiguration.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_domain']/Value",
+                            "value": "__HOST__"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_basepath']/Value",
+                            "value": "hapi-dstu2/Observation"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='primaryResource']/Value",
+                            "value": "Observation"
+                        }
+                    ]
+                }
+            ],
+            "proxies": [
+                
+            ],
+            "targets": [
+                
+            ]
+        },
+         {
+            "name": "dev",
+            "policies": [
+                {
+                    "name": "VerifyAccessToken.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/OAuthV2/Scope",
+                            "value": "observation.read patient/Observation.read patient/Observation.write user/Observation.read user/Observation.write"
+                        }
+                    ]
+                },
+				{
+                    "name": "InitialConfiguration.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_domain']/Value",
+                            "value": "__HOST__"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_basepath']/Value",
+                            "value": "hapi-dstu2/Observation"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='primaryResource']/Value",
+                            "value": "Observation"
+                        }
+                    ]
+                }
+
+            ],
+            "proxies": [
+                
+            ],
+            "targets": [
+                
+            ]
+        },
+		 {
+            "name": "prod",
+            "policies": [
+                {
+                    "name": "VerifyAccessToken.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/OAuthV2/Scope",
+                            "value": "observation.read patient/Observation.read patient/Observation.write user/Observation.read user/Observation.write"
+                        }
+                    ]
+                },
+				{
+                    "name": "InitialConfiguration.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_domain']/Value",
+                            "value": "__HOST__"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='service_callout_basepath']/Value",
+                            "value": "hapi-dstu2/Observation"
+                        },
+						{
+                            "xpath": "/AssignMessage/AssignVariable[Name='primaryResource']/Value",
+                            "value": "Observation"
+                        }
+                    ]
+                }
+
+            ],
+            "proxies": [
+                
+            ],
+            "targets": [
+                
+            ]
+        }
+    ]
+}

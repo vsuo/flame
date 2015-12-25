@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractPrimaryResourceTypeAndId">
+    <DisplayName>ExtractPrimaryResourceTypeAndId</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <URIPath>
+		
+		<!-- Fetch resource with ID  --> 
+		<Pattern ignoreCase="true">/{primaryResourceId}/$everything</Pattern>
+        <!-- resource name and ID -->
+        <Pattern ignoreCase="true">/{primaryResourceId}</Pattern>
+        <!-- resource name, ID, "_history" and version ID -->
+        <Pattern ignoreCase="true">/{primaryResourceId}/_history/{versionId}</Pattern>
+        <!-- resource name, ID and subresource name -->
+        <Pattern ignoreCase="true">/{primaryResourceId}/{subResource}</Pattern>
+        <!-- resource name, ID, subresource name and ID -->
+        <Pattern ignoreCase="true">/{primaryResourceId}/{subResource}/{subResourceId}</Pattern>
+        <!-- resource name, ID, history versionId and tags -->
+        <Pattern ignoreCase="true">/{primaryResourceId}/_history/{versionId}/_tags</Pattern>
+    </URIPath>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Source clearPayload="false">request</Source>
+</ExtractVariables>

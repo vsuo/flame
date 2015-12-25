@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout async="false" continueOnError="false" enabled="true" name="FHIRConversion">
+    <DisplayName>FHIRConversion</DisplayName>
+    <Properties/>
+    <ClassName>org.apigee.FhirJsonXmlConv.FhirJsonXmlConv</ClassName>
+    <ResourceURL>java://FhirJsonXmlConv-0.0.6-SNAPSHOT-jar-with-dependencies.jar</ResourceURL>
+</JavaCallout>

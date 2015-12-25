@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="ServiceCallout.IdentifyUser">
+    <FaultRules/>
+    <Properties/>
+    <Request clearPayload="false" variable="identifyUserRequest">
+         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>identifyUserResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/authenticate/identify</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

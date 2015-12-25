@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignPaginationAttributes">
+    <DisplayName>AssignPaginationAttributes</DisplayName>
+    <Properties/>
+    <Set>
+        <QueryParams>      
+        	<QueryParam name="_getpages">{request.queryparam.stateid}</QueryParam>  
+          	<QueryParam name="_getpagesoffset">{request.queryparam.page}</QueryParam> 
+          	<QueryParam name="_count">{request.queryparam.page_size}</QueryParam> 
+    	</QueryParams> 
+    </Set>
+  <Remove>
+        
+        <QueryParams>
+            <QueryParam name="stateid"/>
+          	<QueryParam name="page"/>
+          	<QueryParam name="page_size"/>
+        </QueryParams>
+        
+    </Remove>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

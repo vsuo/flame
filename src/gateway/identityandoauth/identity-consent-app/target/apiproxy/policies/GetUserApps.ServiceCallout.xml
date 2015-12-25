@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="GetUserApps.ServiceCallout">
+    <Request clearPayload="true">
+        <Set>
+            <Headers>
+                <Header name="Authorization">ClientCredential ckczb3ZwS0dVbGhHc0FUdlMzNUtPQndKZXlGcTB2Q0c6SnpOMFk5eFNmQjA3bTJyQQo=</Header>
+            </Headers>
+              <QueryParams>
+                <QueryParam name="user_id">{userid}</QueryParam>
+            </QueryParams>
+            
+            <Verb>GET</Verb>
+        </Set>
+    </Request>
+    <Response>userApps</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/identity/consents</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

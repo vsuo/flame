@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetResponseToConvertedDoc">
+    <DisplayName>SetResponseToConvertedDoc</DisplayName>
+    <Properties/>
+  <Set>
+    <Headers>
+      <Header name="Content-Type">{output_content_type}</Header>
+    </Headers>
+  </Set>
+    <AssignVariable>
+        <Name>response.content</Name>
+      <Ref>ouput_fhir_document</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>DEBUG_output_fhir_status</Name>
+      <Ref>output_fhir_status</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>DEBUG_output_fhir_reason</Name>
+      <Ref>output_fhir_reason</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>DEBUG_output_fhir_error</Name>
+      <Ref>output_fhir_error</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

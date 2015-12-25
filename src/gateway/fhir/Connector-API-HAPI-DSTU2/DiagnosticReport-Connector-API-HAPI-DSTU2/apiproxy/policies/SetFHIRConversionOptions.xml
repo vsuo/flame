@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetFHIRConversionOptions">
+    <DisplayName>SetFHIRConversionOptions</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>input_fhir_document</Name>
+      <Ref>response.content</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>input_media_type</Name>
+      <Ref>response.header.Content-Type</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>output_media_type</Name>
+      <Ref>returnType</Ref>
+    </AssignVariable>
+  	<AssignVariable>
+        <Name>output_content_type</Name>
+      <Ref>response.header.Content-Type</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

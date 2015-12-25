@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="false" name="Fault_AppNotAuthorizedForPatientData">
+    <DisplayName>Fault_AppNotAuthorizedForPatientData</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json">
+			{
+				"resourceType": "OperationOutcome",
+				"text": {
+					"status": "generated",
+					"div": "<div><h1>Operation Outcome</h1><table border='0'><tr><td style='font-weight: bold;'>error</td><td>[]</td><td><pre>Access not authorized by patient</pre></td>\\\n\\\t\\\t\\\t</tr>\\\n\\\t\\\t</table>\\\n\\\t</div>"
+				},
+				"issue": [
+					{
+						"severity": "error",
+						"details": "Access not authorized by patient"
+					}
+				]
+			}</Payload>
+            <StatusCode>401</StatusCode>
+            <ReasonPhrase>Unauthorized</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

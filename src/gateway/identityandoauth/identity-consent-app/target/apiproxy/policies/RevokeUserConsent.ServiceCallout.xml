@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><ServiceCallout async="false" continueOnError="true" enabled="true" name="RevokeUserConsent.ServiceCallout">
+    <DisplayName>RevokeUserConsent.ServiceCallout</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Request clearPayload="true">
+        <Set>
+            <Headers>
+                <Header name="Authorization">ClientCredential ckczb3ZwS0dVbGhHc0FUdlMzNUtPQndKZXlGcTB2Q0c6SnpOMFk5eFNmQjA3bTJyQQo=</Header>
+                <Header name="Content-type">application/json</Header>
+            </Headers>
+            
+            <Verb>PUT</Verb>
+            <Payload variablePrefix="%" variableSuffix="#">
+                {"status": "revoked"}
+            </Payload>
+        </Set>
+    </Request>
+    <Response>userApps</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://sshaha-test.apigee.net/identity/consents/{request.queryparam.consentid}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

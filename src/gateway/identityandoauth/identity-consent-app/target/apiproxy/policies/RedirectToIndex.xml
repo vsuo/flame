@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><RaiseFault name="RedirectToIndex">
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<FaultResponse>
+		<Set>
+			<StatusCode>302</StatusCode>
+			<Headers>
+				<Header name="Location">https://sshaha-test.apigee.net/openid/index</Header>
+				<Header name="Access-Control-Allow-Origin">{request.header.origin}</Header>
+				<Header name="Set-cookie">id=;Max-Age=-11; path=/</Header>
+			</Headers>
+		</Set>
+	</FaultResponse>
+</RaiseFault>
