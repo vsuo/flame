@@ -1,8 +1,0 @@
-<InvalidateCache name="InvalidateSession">
-    <CacheResource>consent-session-cache</CacheResource>
-    <Scope>Global</Scope>
-    <CacheKey>
-        <KeyFragment ref="sessionid" />
-    </CacheKey>
-    <PurgeChildEntries>true</PurgeChildEntries>
-</InvalidateCache>

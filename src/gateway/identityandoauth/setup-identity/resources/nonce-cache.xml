@@ -6,7 +6,7 @@
     <Compression>
         <MinimumSizeInKB>1024</MinimumSizeInKB>
     </Compression>
-    <Description>A Cache resource for the prod environment.</Description>
+    <Description>A Cache resource for the test environment.</Description>
     <DiskSizeInMB>0</DiskSizeInMB>
     <InMemorySizeInKB>8000</InMemorySizeInKB>
     <MaxElementsInMemory>3000000</MaxElementsInMemory>

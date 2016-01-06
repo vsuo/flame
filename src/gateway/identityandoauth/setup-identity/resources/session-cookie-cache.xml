@@ -3,7 +3,7 @@
     <ExpirySettings>
         <TimeoutInSec>30000</TimeoutInSec>
     </ExpirySettings>
-    <Description></Description>
+    <Description>A Cache resource for the test environment.</Description>
     <DiskSizeInMB>0</DiskSizeInMB>
     <InMemorySizeInKB>0</InMemorySizeInKB>
     <MaxElementsInMemory>100000</MaxElementsInMemory>

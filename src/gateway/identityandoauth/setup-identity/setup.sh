@@ -9,9 +9,15 @@ cp ../identity-demo-app/config.orig ../identity-demo-app/config.json
 cp ../setup-identity/config.orig ../setup-identity/config.sh
 cp ../setup-identity/usergrid.orig ../setup-identity/usergrid.sh
 
-### setup.sh
+### Cache Configuration files
+cp ../setup-identity/resources/consent-session-cache.orig ../setup-identity/resources/consent-session-cache.xml
+cp ../setup-identity/resources/nonce-cache.orig ../setup-identity/resources/nonce-cache.xml
+cp ../setup-identity/resources/session-cookie-cache.orig ../setup-identity/resources/session-cookie-cache.xml
+cp ../setup-identity/resources/auth-req-param-cache.orig ../setup-identity/resources/auth-req-param-cache.xml
 
+### setup.sh
 URI="https://api.enterprise.apigee.com"
+unamestr=`uname`
 
 usage() {
   echo "Usage: $(basename $0) [-o <org name>] [-e <env name>] [-u <admin email>] [-p <admin password>]"
@@ -22,56 +28,6 @@ usage() {
   echo "  -p | --password <password> :         Admin Password"
   exit 0
 }
-
-# if [ $# -eq 0 ]; then
-# 	usage
-# fi
-
-while [ $# -gt 0 ]; do
-  case "$1" in
-    -o|--org)
-      if [ -n "$2" ]; then
-        ORG=$2
-        shift
-        shift
-      else
-        usage
-      fi
-    ;;
-    -e|--env)
-      if [ -n "$2" ]; then
-        ENV=$2
-        shift
-        shift
-      else
-        usage
-      fi
-    ;;
-    -u|--username)
-      if [ -n "$2" ]; then
-        ADMIN_EMAIL=$2
-        shift
-        shift
-      else
-        usage
-      fi
-    ;;
-    -p|--password)
-      if [ -n "$2" ]; then
-        APW=$2
-        shift
-        shift
-      else
-        usage
-      fi
-    ;;
-    -h|--help)
-      usage
-    ;;
-    *)
-      usage
-  esac
-done
 
 if [ -z "${ORG}" ]; then
     echo "Enter Apigee Enterprise Organization, followed by [ENTER]:"
@@ -90,8 +46,7 @@ fi
 
 if [ -z "${APW}" ]; then
     echo "Enter Apigee Enterprise PASSWORD, followed by [ENTER]:"
-   # read -s -r APW
-    read  -r APW
+	read APW
 fi
 
 HOST=$ORG-$ENV.apigee.net
@@ -115,9 +70,35 @@ echo ""
 SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X DELETE "${URI}/v1/o/${ORG}/environments/${ENV}/caches/session-cookie-cache" 1>&2`
 echo "${SETUP_RESULT}"
 echo ""
-
 ### End - Delete Resources ###
 
+### Configuring Cache Resources start ###
+cachefiles=("../setup-identity/resources/consent-session-cache.xml" "../setup-identity/resources/nonce-cache.xml" "../setup-identity/resources/auth-req-param-cache.xml" "../setup-identity/resources/session-cookie-cache.xml")
+
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
+	for file in "${cachefiles[@]}"
+	do
+		if [ -f "$file" ]
+		then
+			echo "$file Configured."
+			sed -i "s/__ENV__/$ENV/g" $file 
+		else
+			echo "$file file not found."
+		fi
+	done
+else
+	for file in "${cachefiles[@]}"
+	do
+		if [ -f "$file" ]
+		then
+			echo "$file Configured."
+			sed -i "" "s/__ENV__/$ENV/g" $file 
+		else
+			echo "$file file not found."
+		fi
+	done	
+fi
+### end Configuring Cache Resources ###
 
 ### Create Cache Resources Now ###
 echo `date`": Creating Cache Resources, Please hang On !!"
@@ -137,7 +118,6 @@ echo ""
 SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X POST "${URI}/v1/o/${ORG}/environments/${ENV}/caches" -T ./resources/session-cookie-cache.xml -H "Content-Type: application/xml" -H "Accept: application/xml" 1>&2`
 echo "${SETUP_RESULT}"
 echo ""
-
 ### End - Create Cache Resources ###
 
 ### Create App Resources Now ###
@@ -163,7 +143,7 @@ SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X POST "${URI}/v1/o/${ORG}/dev
 echo "${SETUP_RESULT}"
 echo ""
 
-SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X POST "${URI}/v1/o/${ORG}/apiproducts" -H "Content-Type: application/json" -d '{"approvalType":"auto","attributes": [{"name": "RATE_LIMIT_OVERRIDE_LIMIT","value": "100ps"}],"displayName":"Identity App Product","name":"identityproduct","environments":["test","prod"], "quota": "100", "quotaInterval": "1", "quotaTimeUnit": "minute","scopes" :["allergyintolerance.read","careplan.read","condition.read","diagnosticorder.read","diagnosticreport.read","documentreference.read","encounter.read","immunization.read","medicationadministration.read","medicationdispense.read","medicationorder.read","medicationstatement.read","observation.read","patient.read","patient/Allergyintolerance.read","patient/Careplan.read","patient/Condition.read","patient/Diagnosticorder.read","patient/Diagnosticreport.read","patient/Documentreference.read","patient/Encounter.read","patient/Immunization.read","patient/Medicationadministration.read","patient/Medicationdispense.read","patient/Medicationorder.read","patient/Medicationstatement.read","patient/Observation.read","patient/Observation.write","patient/Patient.read","patient/Practitioner.read","patient/Procedure.read","practitioner.read","procedure.read","user/Allergyintolerance.read","user/Allergyintolerance.write","user/Careplan.read","user/Careplan.write","user/Condition.read","user/Condition.write","user/Diagnosticorder.read","user/Diagnosticorder.write","user/Diagnosticreport.read","user/Diagnosticreport.write","user/Documentreference.read","user/Documentreference.write","user/Encounter.read","user/Encounter.write","user/Immunization.read","user/Immunization.write","user/Medicationadministration.read","user/Medicationadministration.write","user/Medicationdispense.read","user/Medicationdispense.write","user/Medicationorder.read","user/Medicationorder.write","user/Medicationstatement.read","user/Medicationstatement.write","user/Observation.read","user/Observation.write","user/Patient.read","user/Patient.write","user/Practitioner.read","user/Practitioner.write","user/Procedure.read","user/Procedure.write","schedule.read","patient/Schedule.read","user/Schedule.read","user/Schedule.write"]}' 1>&2`
+SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X POST "${URI}/v1/o/${ORG}/apiproducts" -H "Content-Type: application/json" -d '{"approvalType":"auto","attributes": [{"name": "RATE_LIMIT_OVERRIDE_LIMIT","value": "100ps"}],"displayName":"Identity App Product","name":"identityproduct","environments":["test","prod"], "quota": "100", "quotaInterval": "1", "quotaTimeUnit": "minute","scopes" :["patient/Allergyintolerance.read","patient/Allergyintolerance.write","patient/Careplan.read","patient/Careplan.write","patient/Condition.read","patient/Condition.write","patient/Diagnosticorder.read","patient/Diagnosticorder.write","patient/Diagnosticreport.read","patient/Diagnosticreport.write","patient/Documentreference.read","patient/Documentreference.write","patient/Encounter.read","patient/Encounter.write","patient/Immunization.read","patient/Immunization.write","patient/Medicationadministration.read","patient/Medicationadministration.write","patient/Medicationdispense.read","patient/Medicationdispense.write","patient/Medicationorder.read","patient/Medicationorder.write","patient/Medicationstatement.read","patient/Medicationstatement.write","patient/Observation.read","patient/Observation.write","patient/Patient.read","patient/Patient.write","patient/Practitioner.read","patient/Practitioner.write","patient/Procedure.read","patient/Procedure.write","user/Allergyintolerance.read","user/Allergyintolerance.write","user/Careplan.read","user/Careplan.write","user/Condition.read","user/Condition.write","user/Diagnosticorder.read","user/Diagnosticorder.write","user/Diagnosticreport.read","user/Diagnosticreport.write","user/Documentreference.read","user/Documentreference.write","user/Encounter.read","user/Encounter.write","user/Immunization.read","user/Immunization.write","user/Medicationadministration.read","user/Medicationadministration.write","user/Medicationdispense.read","user/Medicationdispense.write","user/Medicationorder.read","user/Medicationorder.write","user/Medicationstatement.read","user/Medicationstatement.write","user/Observation.read","user/Observation.write","user/Patient.read","user/Patient.write","user/Practitioner.read","user/Practitioner.write","user/Procedure.read","user/Procedure.write","patient/Schedule.read","patient/Schedule.write","user/Schedule.read","user/Schedule.write"]}' 1>&2`
 echo "${SETUP_RESULT}"
 echo ""
 
@@ -184,22 +164,23 @@ ckey=`echo ${apikey} | tr -d '"'`
 SETUP_RESULT=`curl -k -u "${ADMIN_EMAIL}:${APW}" -X POST "${URI}/v1/o/${ORG}/developers/user@identity.com/apps/IdentityApp/keys/${ckey}" -H "Content-Type: application/xml" -d '<CredentialRequest><ApiProducts><ApiProduct>identityproduct</ApiProduct></ApiProducts></CredentialRequest>' `
 echo "${SETUP_RESULT}"
 
-unamestr=`uname`
 echo "$unamestr"
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
-	sed -i  "s/__KEY__/$apikey/g" ./config.sh
-	sed -i  "s/__SECRET__/$apisecret/g" ./config.sh
-	sed -i  "s/__ORG__/$ORG/g" ./config.sh
-	sed -i  "s/__ENV__/$ENV/g" ./config.sh
-	sed -i  "s/__ADMINEMAIL__/$ADMIN_EMAIL/g" ./usergrid.sh
-	sed -i  "s/__APW__/$APW/g" ./usergrid.sh
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
+	APW_NEW=$(echo $APW | sed -e 's/\\/\\\\/g' -e 's/\//\\\//g' -e 's/&/\\\&/g' -e "s/'/'\"'\"'/g")
+	sed -i "s/__KEY__/$apikey/g" ./config.sh
+	sed -i "s/__SECRET__/$apisecret/g" ./config.sh
+	sed -i "s/__ORG__/$ORG/g" ./config.sh
+	sed -i "s/__ENV__/$ENV/g" ./config.sh
+	sed -i "s/__ADMINEMAIL__/$ADMIN_EMAIL/g" ./usergrid.sh
+	sed -i "s/'__APW__'/'$APW_NEW'/g" ./usergrid.sh
 else
-	sed -i "" "s/__KEY__/$apikey/g"  ./config.sh
-	sed -i "" "s/__SECRET__/$apisecret/g"  ./config.sh
-	sed -i "" "s/__ORG__/$ORG/g"  ./config.sh
-	sed -i "" "s/__ENV__/$ENV/g"  ./config.sh
+	APW_NEW=$(echo $APW | sed -e "" 's/\\/\\\\/g' -e "" 's/\//\\\//g' -e "" 's/&/\\\&/g' -e "" "s/'/'\"'\"'/g")
+	sed -i "" "s/__KEY__/$apikey/g" ./config.sh
+	sed -i "" "s/__SECRET__/$apisecret/g" ./config.sh
+	sed -i "" "s/__ORG__/$ORG/g" ./config.sh
+	sed -i "" "s/__ENV__/$ENV/g" ./config.sh
 	sed -i "" "s/__ADMINEMAIL__/$ADMIN_EMAIL/g" ./usergrid.sh
-	sed -i "" "s/__APW__/$APW/g" ./usergrid.sh
+	sed -i "" "s/'__APW__'/'$APW_NEW'/g" ./usergrid.sh
 fi
 
 ### End - Create App Resources ###
@@ -208,8 +189,7 @@ echo "Calling usergrid.sh ==> for Usergrid dependencies. Hold tight, for some mo
 echo
 echo "I promise, we'll have a gala time together ..."
 
-
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	bash ./usergrid.sh
 else
 	sh ./usergrid.sh
@@ -230,3 +210,9 @@ cp ../identity-usermgmt-node-module/usermgmt/package.orig ../identity-usermgmt-n
 cp ../identity-demo-app/config.orig ../identity-demo-app/config.json
 cp ../setup-identity/config.orig ../setup-identity/config.sh
 cp ../setup-identity/usergrid.orig ../setup-identity/usergrid.sh
+
+### Cache Configuration files
+cp ../setup-identity/resources/consent-session-cache.orig ../setup-identity/resources/consent-session-cache.xml
+cp ../setup-identity/resources/nonce-cache.orig ../setup-identity/resources/nonce-cache.xml
+cp ../setup-identity/resources/session-cookie-cache.orig ../setup-identity/resources/session-cookie-cache.xml
+cp ../setup-identity/resources/auth-req-param-cache.orig ../setup-identity/resources/auth-req-param-cache.xml

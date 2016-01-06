@@ -1,21 +1,25 @@
 ### usergrid.sh
 URI="https://api.usergrid.com"
 ADMIN_EMAIL=__ADMINEMAIL__
-APW=__APW__
+APW='__APW__'
 
 ### These are the Custom variables ###
-echo "Enter Apigee App services org, followed by [ENTER]:"
-read ORG
+if [ -z "${ORG}" ]; then
+	echo "Enter Apigee App services org, followed by [ENTER]:"
+	read ORG
+fi
+
+if [ -z "${APP_NAME}" ]; then
+	echo "Enter Application Name , followed by [ENTER]:"
+	read APP_NAME
+fi
 
 unamestr=`uname`
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
-	sed -i  "s/__UGORG__/$ORG/g" ./config.sh
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
+	APW=$(echo ${APW} | sed -e 's/\\/\\\\/g' -e 's/\"/\\\"/g')
 else
-	sed -i "" "s/__UGORG__/$ORG/g" ./config.sh
+	APW=$(echo ${APW} | sed -e "" 's/\\/\\\\/g' -e "" 's/\"/\\\"/g')
 fi
-	
-echo "Enter Application Name , followed by [ENTER]:"
-read APP_NAME
 
 echo "Fetching App Services Token, to login ..."
 token=`curl -k -X POST ${URI}/management/token  -d '{"grant_type":"password", "username": "'${ADMIN_EMAIL}'", "password": "'${APW}'"}' | sed 's/.*access_token\"\:\"\(.*\)\"\,\"expires_in.*/\1/'`
@@ -39,19 +43,17 @@ echo "Status: Creating Consent Collection: ${resp}"
 resp=`curl -k -X POST ${URI}/${ORG}/${APP_NAME}/sso?access_token="${token}"`
 echo "Status: Creating SSO Collection:${resp}"
 
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
-	sed -i  "s/__UGKEY__/$c_id/g" ./config.sh
-	sed -i  "s/__UGSECRET__/$sec/g" ./config.sh
-	sed -i  "s/__UGAPP__/$APP_NAME/g" ./config.sh
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
+	sed -i "s/__UGORG__/$ORG/g" ./config.sh
+	sed -i "s/__UGKEY__/$c_id/g" ./config.sh
+	sed -i "s/__UGSECRET__/$sec/g" ./config.sh
+	sed -i "s/__UGAPP__/$APP_NAME/g" ./config.sh
+	bash ./config.sh
 else
+	sed -i "" "s/__UGORG__/$ORG/g" ./config.sh
 	sed -i "" "s/__UGKEY__/$c_id/g" ./config.sh
 	sed -i "" "s/__UGSECRET__/$sec/g" ./config.sh
 	sed -i "" "s/__UGAPP__/$APP_NAME/g" ./config.sh	
-fi
-### End - Create Application ###
-
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
-	bash ./config.sh
-else
 	sh ./config.sh
 fi
+### End - Create Application ###

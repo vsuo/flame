@@ -8,11 +8,10 @@ appkey=__UGKEY__
 appsecret=__UGSECRET__
 apporg=__UGORG__
 appapp=__UGAPP__
-
-#identity-consent-app config.json 
-
 unamestr=`uname`
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]]  ; then
+
+#identity-consent-app config.json
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]]  ; then
 	sed -i  "s/__APIKEY__/$apikey/g" ../identity-consent-app/config.json
 	sed -i  "s/__AUTH__/$auth/g" ../identity-consent-app/config.json
 	sed -i  "s/__HOST__/$host/g" ../identity-consent-app/config.json
@@ -23,7 +22,7 @@ else
 fi
 
 #identity-consentmgmt-api config.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__APPKEY__/$appkey/g" ../identity-consentmgmt-api/config.json
 	sed -i  "s/__APPSECRET__/$appsecret/g" ../identity-consentmgmt-api/config.json
 	sed -i  "s/__APPORG__/$apporg/g" ../identity-consentmgmt-api/config.json
@@ -36,7 +35,7 @@ else
 fi
 
 #identity-consentmgmt-api package.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__APPORG__/$apporg/g" ../identity-consentmgmt-api-node-module/consentmgmt/package.json
 	sed -i  "s/__APPAPP__/$appapp/g" ../identity-consentmgmt-api-node-module/consentmgmt/package.json
 	sed -i  "s/__APPKEY__/$appkey/g" ../identity-consentmgmt-api-node-module/consentmgmt/package.json
@@ -49,7 +48,7 @@ else
 fi
 
 #identity-oauthv2-api config.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__HOST__/$host/g" ../identity-oauthv2-api/config.json
 	sed -i  "s/__AUTH__/$auth/g" ../identity-oauthv2-api/config.json
 else
@@ -58,12 +57,11 @@ else
 fi
 
 #identity-usermgmt-api config.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__APPORG__/$apporg/g" ../identity-usermgmt-api/config.json
 	sed -i  "s/__APPAPP__/$appapp/g" ../identity-usermgmt-api/config.json
 	sed -i  "s/__APPKEY__/$appkey/g" ../identity-usermgmt-api/config.json
 	sed -i  "s/__APPSECRET__/$appsecret/g" ../identity-usermgmt-api/config.json
-
 else
 	sed -i  "" "s/__APPORG__/$apporg/g" ../identity-usermgmt-api/config.json
 	sed -i  "" "s/__APPAPP__/$appapp/g" ../identity-usermgmt-api/config.json
@@ -72,7 +70,7 @@ else
 fi
 
 #identity-usermgmt-api package.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__APPORG__/$apporg/g" ../identity-usermgmt-node-module/usermgmt/package.json
 	sed -i  "s/__APPAPP__/$appapp/g" ../identity-usermgmt-node-module/usermgmt/package.json
 	sed -i  "s/__APPKEY__/$appkey/g" ../identity-usermgmt-node-module/usermgmt/package.json
@@ -85,7 +83,7 @@ else
 fi
 
 #identity-demo-api config.json
-if [[ "$unamestr" == 'Linux' || "$unamestr" == *"CYGWIN"* ]] ; then
+if [[ "$unamestr" == 'Linux' || "$unamestr" == *"NT"* ]] ; then
 	sed -i  "s/__HOST__/$host/g" ../identity-demo-app/config.json
 	sed -i  "s/__APIKEY__/$apikey/g" ../identity-demo-app/config.json
 	sed -i  "s/__APISECRET__/$apisecret/g" ../identity-demo-app/config.json
@@ -94,4 +92,3 @@ else
 	sed -i  "" "s/__APIKEY__/$apikey/g" ../identity-demo-app/config.json
 	sed -i  "" "s/__APISECRET__/$apisecret/g" ../identity-demo-app/config.json
 fi
-
